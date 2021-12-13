@@ -22,7 +22,7 @@
 
 #### 介绍
 
-🎉🎉🔥 基于 vue3.x 、Typescript、vite、Element plus 等，适配手机、平板、pc 的后台开源免费模板库（vue2.x 请切换 vue-prev-admin 分支）开发文档
+🎉🎉🔥 基于 vue3.x 、Typescript、vite、Element plus 等，适配手机、平板、pc 的后台开源免费模板库开发文档
 
 #### 线上预览
 

@@ -22,7 +22,7 @@ module.exports = {
   description:
     "🎉🎉🔥基于vue3.x 、Typescript、vite、Element plus等，适配手机、平板、pc 的后台开源免费模板库（vue2.x请切换vue-prev-admin分支）开发文档",
   lang: "zh",
-  base: "/",
+  base: "/vue-next-admin-doc-preview/",
   themeConfig: {
     logo: "/images/logo-mini.svg",
     search: true,

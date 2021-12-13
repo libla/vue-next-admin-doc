@@ -27,7 +27,6 @@ npm run dev
 
 在项目根目录中创建一个 `vite.config.js` 或 `vite.config.ts` 文件（与 vue.config.js 一样）。如果在当前工作目录中找到 `Vite`，它将自动使用它。
 
-- github `config.ts` 配置参考(失效 0.x 版本)：[https://github.com/vitejs/vite/blob/master/src/node/config.ts](https://github.com/vitejs/vite/blob/master/src/node/config.ts)
 - vite 最新文档（英文）：[https://vitejs.dev/index.html](https://vitejs.dev/index.html)
 
 配置 `vite.config.ts`：
@@ -50,7 +49,6 @@ export default viteConfig;
 
 - github：[github/vite/config.ts](https://github.com/vitejs/vite/blob/73196e517643af88a790ab5222d3e6b68dbbf987/packages/vite/src/node/config.ts)
 - issues：[https://github.com/vitejs/vite/issues/1467](https://github.com/vitejs/vite/issues/1467)
-- plugin-vue：[@vitejs/plugin-vue](@vitejs/plugin-vue)
 - plugins：[alias#entries](https://github.com/rollup/plugins/tree/master/packages/alias#entries)
   :::
 
@@ -70,7 +68,7 @@ npx tsc --init
 
 将 `main.js` 修改为 `main.ts`，同时将 `index.html` 里面的引用也修改为 `main.ts`，然后在 `script` 里添加 `lang="ts"`
 
-index.html
+`index.html`
 
 ```html
 <!DOCTYPE html>
@@ -88,7 +86,7 @@ index.html
 </html>
 ```
 
-app.vue
+`app.vue`
 
 ```html
 <template>
@@ -301,7 +299,7 @@ cnpm install vue-router@4 --save
 
 > 2.1、页面下新增文件夹 `src/router/index.ts`
 
-index.ts 中写入：
+`index.ts` 中写入：
 
 ```ts
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
@@ -348,7 +346,7 @@ const router = createRouter({
 export default router;
 ```
 
-> 2.2、main.ts 中引入 `src/router/index.ts`
+> 2.2、`main.ts` 中引入 `src/router/index.ts`
 
 ```ts
 import { createApp } from "vue";

@@ -1,6 +1,6 @@
 module.exports = {
   head: [
-    ["link", { rel: "icon", href: "/images/logo-mini.svg" }],
+    ["link", { rel: "shortcut icon", href: "/images/favicon.ico" }],
     [
       "meta",
       {

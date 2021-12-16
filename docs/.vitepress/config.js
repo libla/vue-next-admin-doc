@@ -17,6 +17,18 @@ module.exports = {
           "🎉🎉🔥基于vue3.x 、Typescript、vite、Element plus等，适配手机、平板、pc 的后台开源免费模板库（vue2.x请切换vue-prev-admin分支）开发文档",
       },
     ],
+    [
+      "script",
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?dd9ada7b25f65a181a42780f04b764e6";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `,
+    ],
   ],
   title: "vue-next-admin",
   description:
@@ -33,8 +45,8 @@ module.exports = {
     author: "lyt_20201208",
     lastUpdated: "上次更新",
     algolia: {
-      apiKey: "your_api_key",
-      indexName: "index_name",
+      apiKey: "4d147eca3b892b30c89755c01165bc23",
+      indexName: "vue-next-admin-doc-preview",
     },
     nav: [
       {
@@ -44,6 +56,19 @@ module.exports = {
       {
         text: "配置参考",
         link: "/config/",
+      },
+      {
+        text: "集成后端",
+        items: [
+          {
+            text: "@熊猫 PandaGoAdmin",
+            link: "https://github.com/PandaGoAdmin/PandaX",
+          },
+          {
+            text: "@甜蜜蜜 GoPro平台",
+            link: "https://www.gnet.top/public",
+          },
+        ],
       },
       {
         text: "线上演示",

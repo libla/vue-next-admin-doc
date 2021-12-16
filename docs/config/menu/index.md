@@ -1,7 +1,12 @@
 # 菜单配置
 
 ::: tip 温馨提示
-先不着急上手，首先得了解各参数字段是啥意思，菜单路径地址：[/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts)。也可看对应的 [next.router API 参考文档](https://next.router.vuejs.org/zh/api/#beforeenter) ❤️
+先不着急上手，首先得了解各参数字段是啥意思，菜单路径地址：[/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts)。也可看对应的 [next.router API 参考文档](https://next.router.vuejs.org/zh/api/#beforeenter) ❤️。
+
+- 前端控制：`/@/router/route.ts` 修改菜单数据
+
+- 后端控制：需先去 `/@/store/modules/themeConfig.ts` 下开启 `isRequestRoutes: true`，然后去 `/@/api/menu/index.ts` 中修改接口拿菜单数据
+
 :::
 
 > 以下内容为国际化，想了解更多，请移步 [高级-国际化](/config/i18n/)

@@ -1,7 +1,7 @@
 # 布局配置
 
 ::: tip 布局不生效
-清空浏览器永久缓存或者点击 `布局配置-一键恢复默认`，前提是修改了 `/@/store/modules/themeConfig.ts` 配置文件内容。布局配置组件路径：`/@/layout/navBars/breadcrumb/setings.vue`
+清空浏览器永久缓存或者点击 `布局配置-一键恢复默认`，前提是修改了 `/@/store/modules/themeConfig.ts` 配置文件内容。布局配置组件路径：`/@/layout/navBars/breadcrumb/setings.vue`。添加或者修改功能，请前往 `/@/layout/navBars/breadcrumb/setings.vue` 组件位置修改
 :::
 
 > 大图查看，鼠标右键：`在新标签页中打开图片`

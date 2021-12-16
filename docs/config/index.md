@@ -6,7 +6,7 @@
 
 <p style="font-weight: bold;">一、目录结构图</p>
 
-> 目录结构将 `定期跟新`。树结构生产 cmd 输入 `tree` 或 `tree /f`
+> 目录结构将 `定期更新`。树结构生成 cmd 输入 `tree` 或 `tree /f`
 
 ```ts
 ├── vueNextAdmin

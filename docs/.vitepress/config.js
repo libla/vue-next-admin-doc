@@ -1,6 +1,9 @@
 module.exports = {
   head: [
-    ["link", { rel: "shortcut icon", href: "/images/favicon.ico" }],
+    [
+      "link",
+      { rel: "icon", href: "/vue-next-admin-doc-preview/images/favicon.ico" },
+    ],
     [
       "meta",
       {

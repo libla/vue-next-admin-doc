@@ -356,3 +356,56 @@ vue-next-admin-v1.1.2.zip
 </script>
 
 ```
+
+## 设置可视区高度 100%
+
+> 主要是通过 [CSS calc() 函数](https://www.runoob.com/cssref/func-calc.html) 进行动态适配
+
+```ts {4}
+<template>
+  <div :style="{ height: `calc(100vh - ${initTagViewHeight}` }">
+    <div class="layout-view-bg-white">
+      <div style="height: 100%">这里是内容区...</div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { computed } from 'vue';
+import { useStore } from '/@/store/index';
+export default {
+	name: 'funEchartsMap',
+	setup() {
+    const store = useStore();
+    // 设置主内容的高度
+    const initTagViewHeight = computed(() => {
+      let { isTagsview } = store.state.themeConfig.themeConfig;
+      let { isTagsViewCurrenFull } = store.state.tagsViewRoutes;
+      if (isTagsViewCurrenFull) {
+        return `30px`;
+      } else {
+        if (isTagsview) return `114px`;
+        else return `80px`;
+      }
+    });
+  }
+}
+```
+
+## master 分支装依赖时会出现的问题
+
+<p style="font-weight: bold;">一、screenFul 要求的node 版本大于14.x.1</p>
+
+> 解决方法：[升级 node 版本](https://npmmirror.com/mirrors/node/)。`.msi` 后缀的为有安装界面应用。
+
+<p style="font-weight: bold;">二、开发依赖的types 库，已有自己的类型声明</p>
+
+> 解决方法：根目录 `package.json` 下："@types/axios": "^0.14.0"，" @types/clipboard": "^2.0.1", 去掉这两个依赖
+
+<p style="font-weight: bold;">三、会报 error Unexpected end of JSON input while parsing near '...n4m5KyE3UEIxfv0HEAVbz'  这种类型的错误</p>
+
+> 解决方法：cmd 中执行以下命令
+
+```bash
+npm cache clean --force
+```

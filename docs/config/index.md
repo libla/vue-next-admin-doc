@@ -152,13 +152,14 @@
 
 <p style="font-weight: bold;">二、仓库代码各分支说明（后续将添加更多分支）</p>
 
-> 项目切换分支后，README.md 文件内容都会不一样，请注意看 README.md 文件中的第一项 介绍 内容，会大概介绍当前分支是干啥的。
+> 项目切换分支后，README.md 文件内容都会不一样，请注意看 README.md 文件中的第一项 介绍 内容，会大概介绍当前分支是干啥的。`基础版同步 master 分支主版本`
 
 ```ts
 ├── vueNextAdmin
 	├── master (基于 vue3.x、vite、ts、Element plus等，主项目模板)
 	├── vue-prev-admin (基于 vue2.x、vue-cli、element ui 项目模板)
 	├── vue-next-admin-template (vue-next-admin 基础版 ts，不带国际化)
+	├── vue-next-admin-template-js (基于 vue-next-admin-template 修改 js 版，不带国际化)
 	├── vue-next-admin-mould (基于 vue3.x、vite、ts 配置了 eslint、prettier 通用项目模板)
 	├── electron (跨平台的桌面应用程序)
 	└── personal ( personal-个人项目)

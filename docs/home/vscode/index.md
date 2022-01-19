@@ -18,6 +18,7 @@
 
 > 2.2、复制粘贴以下插件进行安装（可批量搜索，空格隔开）
 
+- Vue Language Features (Volar)
 - Auto Close Tag
 - Auto Rename Tag
 - background-cover

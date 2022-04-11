@@ -69,7 +69,7 @@ module.exports = {
           },
           {
             text: "@甜蜜蜜 GoPro平台",
-            link: "https://www.gnet.top/public",
+            link: "https://toscode.gitee.com/GionConnection/gopro_free",
           },
         ],
       },

@@ -47,10 +47,10 @@ module.exports = {
     editLinkText: "欢迎到 Gitee 上编辑此页！",
     author: "lyt_20201208",
     lastUpdated: "上次更新",
-    algolia: {
-      apiKey: "4d147eca3b892b30c89755c01165bc23",
-      indexName: "vue-next-admin-doc-preview",
-    },
+    // algolia: {
+    //   apiKey: "4d147eca3b892b30c89755c01165bc23",
+    //   indexName: "vue-next-admin-doc-preview",
+    // },
     nav: [
       {
         text: "指南",
@@ -70,6 +70,10 @@ module.exports = {
           {
             text: "@甜蜜蜜 GoPro平台",
             link: "https://toscode.gitee.com/GionConnection/gopro_free",
+          },
+          {
+            text: "@甜蜜蜜 net6 平台",
+            link: "https://gitee.com/GionConnection/niupi-free",
           },
         ],
       },

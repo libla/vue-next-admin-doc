@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://gitee.com/lyt-top/vue-next-admin-images/raw/master/logo/logo-text.svg
+heroImage: https://img-blog.csdnimg.cn/9efd5420327a46b7bd6d93524a97229d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_14,color_FFFFFF,t_70,g_se,x_16
 heroText: " "
 tagline: 基于vue3.x 、Typescript、vite、Element plus 后台开源免费模板开发文档
 actionText: 开始
@@ -15,7 +15,7 @@ features:
   - title: 💖 解疑问
     details: 加群解答探讨开发中遇到的各种问题，1 群：665452019 2 群：766356862
   - title: 👍 全免费
-    details: 后台模板永远免费，供学习、商业使用。但不得用于赌博、传销、走私、贩毒、组织卖淫等
+    details: 后台模板永远免费，供学习、商业使用。
   - title: 🚧 维护久
     details: 只要作者不转行，将一直持续修复bug、更新迭代版本
   - title: 💯 纳建议

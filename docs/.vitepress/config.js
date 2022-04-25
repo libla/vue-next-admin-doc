@@ -72,8 +72,12 @@ module.exports = {
             link: "https://toscode.gitee.com/GionConnection/gopro_free",
           },
           {
-            text: "@甜蜜蜜 net6 平台",
+            text: "@甜蜜蜜 NiuPi 平台",
             link: "https://gitee.com/GionConnection/niupi-free",
+          },
+          {
+            text: "@游子 GFast-V3",
+            link: "https://gitee.com/tiger1103/gfast/tree/os-v3/",
           },
         ],
       },

@@ -1,0 +1,1 @@
+import{_ as e,y as r,x as t,W as n}from"./plugin-vue_export-helper.da6f02ab.js";const d='{"title":"\u9002\u7528\u4EBA\u7FA4","description":"","frontmatter":{},"relativePath":"home/forPeople/index.md","lastUpdated":1651056859385}',a={},o=n("",4),l=[o];function s(p,i,c,h,_,f){return t(),r("div",null,l)}var g=e(a,[["render",s]]);export{d as __pageData,g as default};

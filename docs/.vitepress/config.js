@@ -79,6 +79,26 @@ module.exports = {
             text: "@游子 GFast-V3",
             link: "https://gitee.com/tiger1103/gfast/tree/os-v3/",
           },
+          {
+            text: "@diygw.com gw-ui-php",
+            link: "https://gitee.com/diygw/diygw-ui-php/",
+          },
+          {
+            text: "@zsvg vboot-net",
+            link: "https://gitee.com/zsvg/vboot-net",
+          },
+          {
+            text: "@zsvg vboot-java",
+            link: "https://gitee.com/zsvg/vboot-java",
+          },
+          {
+            text: "@青红造了个白 buildadmin",
+            link: "https://gitee.com/wonderful-code/buildadmin",
+          },
+          {
+            text: "@Goodwell iotfast(一个开源的物联网平台)",
+            link: "https://github.com/xiaodingding/iotfast",
+          },
         ],
       },
       {
@@ -129,7 +149,7 @@ module.exports = {
           children: [
             { text: "介绍", link: "/home/introduce/" },
             { text: "安装", link: "/home/install/" },
-            { text: "快速上手", link: "/home/fast/" },
+            { text: "其它", link: "/home/fast/" },
           ],
         },
         {

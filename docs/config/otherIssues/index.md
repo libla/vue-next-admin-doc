@@ -409,3 +409,27 @@ export default {
 ```bash
 npm cache clean --force
 ```
+
+## 本地开发，页面空白问题
+
+> 解决方法：删除 [layout/routerView/parent.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/routerView/parent.vue) `keep-alive`。如下：
+
+```html
+<router-view v-slot="{ Component }">
+  <transition :name="setTransitionName" mode="out-in">
+    <keep-alive :include="getKeepAliveNames">
+      <component :is="Component" :key="refreshRouterViewKey" class="w100" />
+    </keep-alive>
+  </transition>
+</router-view>
+```
+
+改成（你将失去路由缓存功能，发布时再还原代码，未找到解决办法）
+
+```html
+<router-view v-slot="{ Component }">
+  <transition :name="setTransitionName" mode="out-in">
+    <component :is="Component" :key="refreshRouterViewKey" class="w100" />
+  </transition>
+</router-view>
+```

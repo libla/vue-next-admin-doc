@@ -45,6 +45,7 @@
 - [@省长](https://gitee.com/click33/sa-plus)
 - [@唐参](https://gitee.com/jskz/Jskz-SpringCloud)
 - [@川歌](https://gitee.com/chuange)
+- @华仔
 
 <p style="font-weight: bold;">三、支持作者</p>
 

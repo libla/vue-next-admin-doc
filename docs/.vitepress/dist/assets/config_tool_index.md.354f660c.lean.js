@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,a as t}from"./app.fa60a211.js";const _='{"title":"\u5DE5\u5177\u7C7B\u96C6\u5408","description":"","frontmatter":{},"headers":[],"relativePath":"config/tool/index.md"}',p={},o=t("",3),c=[o];function e(u,i,l,k,r,d){return a(),s("div",null,c)}var h=n(p,[["render",e]]);export{_ as __pageData,h as default};

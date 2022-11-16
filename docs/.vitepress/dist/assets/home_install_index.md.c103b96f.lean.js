@@ -1,1 +1,0 @@
-import{_ as n,y as a,x as s,W as t}from"./plugin-vue_export-helper.da6f02ab.js";const g='{"title":"\u5B89\u88C5","description":"","frontmatter":{},"relativePath":"home/install/index.md","lastUpdated":1651056859388}',e={},o=t("",14),p=[o];function c(l,r,i,u,m,k){return s(),a("div",null,p)}var v=n(e,[["render",c]]);export{g as __pageData,v as default};

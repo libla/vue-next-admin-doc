@@ -203,6 +203,8 @@ npm ERR!     C:\Users\issuser\AppData\Roaming\npm-cache\_logs\2021-12-07T02_06_3
 以下命令都是在 cmd 中执行：
 :::
 
+`ncu -u` 跟新失败，就使用 `npm-check-updates` 命令
+
 ```bash
 # 1、安装
 cnpm install -g npm-check-updates
@@ -300,6 +302,10 @@ vue-next-admin-v1.1.2.zip
 
 > 1.2、[提交日志](https://gitee.com/lyt-top/vue-next-admin/commits/master)，进行一个一个对比修改（貌似也没有其它好的办法）。
 
+## illustrations svg 图标库
+
+[https://undraw.co/illustrations](https://undraw.co/illustrations)，Browse to find the images that fit your needs and click to download. Use the on-the-fly color image generation to match your brand identity.
+
 ## 壁纸库
 
 [https://wallhaven.cc/](https://wallhaven.cc/)，可下载 4k、8k 壁纸（是否侵权，自行辨别）
@@ -354,42 +360,98 @@ vue-next-admin-v1.1.2.zip
     });
   }
 </script>
+```
 
+<p style="font-weight: bold;">四、依赖注入</p>
+
+新版使用 [依赖注入](https://cn.vuejs.org/guide/components/provide-inject.html) 替换 `getCurrentInstance`
+
+```ts
+const properties = {
+  mittBus: mitt(),
+};
+
+for (const [key, value] of Object.entries(properties)) {
+  app.provide(key, value);
+}
+```
+
+使用方法
+
+```js
+// script setup
+<script lang="ts" setup>
+  import { inject } from "vue";
+
+  const mittBus = inject("mittBus");
+
+  mittBus.emit(xxx);
+  mittBus.on(xxx);
+  mittBus.off(xxx);
+</script>
+
+// script
+<script lang="ts">
+  import { inject } from "vue";
+
+  setup() {
+    const mittBus = inject("mittBus");
+
+    {/* mittBus.emit(xxx);
+    mittBus.on(xxx);
+    mittBus.off(xxx); */}
+  }
+</script>
 ```
 
 ## 设置可视区高度 100%
 
-> 主要是通过 [CSS calc() 函数](https://www.runoob.com/cssref/func-calc.html) 进行动态适配
+注意：
 
-```ts {4}
+- 是需要自适应的界面才加上面的类，不需要的别加。内容超出自适应高度，内容将被隐藏。
+- 需设置内置类：`layout-padding`、`layout-padding-auto`、`layout-padding-view`。
+- 样式在 [/src/theme/app.scss](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/theme/app.scss) 中。
+
+1、设置普通 div 高度自适应：
+
+```html
 <template>
-  <div :style="{ height: `calc(100vh - ${initTagViewHeight}` }">
-    <div class="layout-view-bg-white">
-      <div style="height: 100%">这里是内容区...</div>
+  <div class="layout-padding">
+    <div class="layout-padding-auto layout-padding-view">
+      <!-- 普通溢出内容隐藏 -->
+      <div>xxx 内容区</div>
+      <!-- 使用 `el-scrollbar` 进行美化滚动条。如：`el-scrollbar`
+      <el-scrllbar> xxx 内容区 </el-scrllbar> -->
+    </div>
+  </div>
+</template>
+```
+
+2、设置表格高度自适应：主要使用 flex 布局，`el-table` 需设置 `flex: 1;`。
+
+```html
+<template>
+  <div class="system-role-container layout-padding">
+    <div class="system-role-padding layout-padding-auto layout-padding-view">
+      <div>搜索区</div>
+      <el-table style="width: 100%">表格内容区</el-table>
+      <el-pagination>分页区</el-pagination>
+      <div>其它内容</div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { computed } from 'vue';
-import { useStore } from '/@/store/index';
-export default {
-	name: 'funEchartsMap',
-	setup() {
-    const store = useStore();
-    // 设置主内容的高度
-    const initTagViewHeight = computed(() => {
-      let { isTagsview } = store.state.themeConfig.themeConfig;
-      let { isTagsViewCurrenFull } = store.state.tagsViewRoutes;
-      if (isTagsViewCurrenFull) {
-        return `30px`;
-      } else {
-        if (isTagsview) return `114px`;
-        else return `80px`;
+<!-- 设置样式（必须，可查看演示 系统设置 -> 角色管理） -->
+<style scoped lang="scss">
+  .system-role-container {
+    .system-role-padding {
+      padding: 15px;
+      .el-table {
+        flex: 1;
       }
-    });
+    }
   }
-}
+</style>
 ```
 
 ## master 分支装依赖时会出现的问题
@@ -432,4 +494,34 @@ npm cache clean --force
     <component :is="Component" :key="refreshRouterViewKey" class="w100" />
   </transition>
 </router-view>
+```
+
+## 打包之后缓存问题
+
+根目录 `vite.config.ts` 中，设置 打包输出 `output` `new Date().getTime()`
+
+```ts {4-6}
+build: {
+  rollupOptions: {
+    output: {
+      entryFileNames: `assets/[name].${new Date().getTime()}.js`,
+      chunkFileNames: `assets/[name].${new Date().getTime()}.js`,
+      assetFileNames: `assets/[name].${new Date().getTime()}.[ext]`,
+    },
+  },
+},
+```
+
+`"version": "2.3.0"` 版本已改回原来的。[build 时 不能用 ${new Date().getTime()} 设置输出文件名](https://gitee.com/lyt-top/vue-next-admin/issues/I5PATZ)
+
+```ts {4-6}
+build: {
+  rollupOptions: {
+    output: {
+      entryFileNames: `assets/[name].[hash].js`,
+      chunkFileNames: `assets/[name].[hash].js`,
+      assetFileNames: `assets/[name].[hash].[ext]`,
+    },
+  },
+},
 ```

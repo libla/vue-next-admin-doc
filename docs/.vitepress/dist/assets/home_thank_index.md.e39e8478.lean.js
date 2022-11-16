@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r,a as o}from"./app.fa60a211.js";const m='{"title":"\u7279\u522B\u9E23\u8C22","description":"","frontmatter":{},"headers":[],"relativePath":"home/thank/index.md"}',a={},i=o("",9),n=[i];function l(s,h,p,u,c,g){return r(),t("div",null,n)}var f=e(a,[["render",l]]);export{m as __pageData,f as default};

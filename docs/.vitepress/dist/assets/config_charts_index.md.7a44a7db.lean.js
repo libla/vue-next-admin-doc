@@ -1,1 +1,0 @@
-import{_ as e,y as t,x as o,W as i}from"./plugin-vue_export-helper.da6f02ab.js";const g='{"title":"\u6570\u636E\u53EF\u89C6\u5316","description":"","frontmatter":{},"relativePath":"config/charts/index.md","lastUpdated":1651056859373}',a={},r=i("",8),n=[r];function s(l,c,d,p,_,h){return o(),t("div",null,n)}var u=e(a,[["render",s]]);export{g as __pageData,u as default};

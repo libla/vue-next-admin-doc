@@ -34,7 +34,6 @@
 - HTML Boilerplate
 - HTML CSS Support
 - HTML Snippets
-- HTMLHint
 - Icon Fonts
 - Iconify IntelliSense
 - JavaScript (ES6) code snippets
@@ -49,7 +48,6 @@
 - SCSS IntelliSense
 - stylelint
 - Tailwind CSS IntelliSense
-- Vetur
 - vscode-fileheader
 - vscode-icons
 
@@ -121,13 +119,6 @@
   "backgroundCover.opacity": 0.5,
   "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vetur.format.defaultFormatter.html": "prettyhtml",
-  "vetur.format.defaultFormatter.js": "prettier",
-  "vetur.validation.template": false,
-  "vetur.completion.autoImport": false,
-  "vetur.validation.style": false,
-  "vetur.validation.interpolation": false,
-  "vetur.validation.script": false,
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -159,3 +150,23 @@
 <p style="font-weight: bold;">四、如果配置不生效，请尝试重启下 vsCode</p>
 
 安装完插件也请重启下 vsCode，有时有可能出现延迟生效，具体原因不详。
+
+<p style="font-weight: bold;">五、代码智能提示双提示问题</p>
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/4144c48d59c74b9eb312ddfb47ff9263.png)
+
+卸载 `Vetur` 插件 + 删除 vs code 配置代码
+
+```json
+"vetur.format.defaultFormatter.html": "prettyhtml",
+"vetur.format.defaultFormatter.js": "prettier",
+"vetur.validation.template": false,
+"vetur.completion.autoImport": false,
+"vetur.validation.style": false,
+"vetur.validation.interpolation": false,
+"vetur.validation.script": false,
+```
+
+或者禁用工作区，`shift + ctrl + x` 找到 `Vetur` 插件
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/a9dc3bd472e14712852fa8d4e85b7f3f.png)

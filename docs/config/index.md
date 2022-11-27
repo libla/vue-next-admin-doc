@@ -27,6 +27,8 @@
 	│	│   ├── noticeBar (滚动通知)
 	│	│   └── svgIcon (自定义封装 svg 图标)
 	│	│
+	│	├── directive (自定义指令内容)
+	│	│
 	│	├── i18n (存放框架国际化内容)
 	│	│   ├── lang (框架内置国际化)
 	│	│   └── pages (自定义国际化)
@@ -50,14 +52,20 @@
 	│	│
 	│	├── router (存放路由信息)
 	│	│
-	│	├── store (存放组件的状态vuex)
-	│	│   ├── interface (ts接口类型定义)
-	│	│   └── modules (vuex模块化)
+	│	├── stores (存放组件的状态 pinia)
 	│	│
 	│	├── theme (存放框架样式)
 	│	│   ├── common (基础样式)
 	│	│   ├── media (媒体查询)
 	│	│   └── mixins (scss混入)
+	│	│
+	│	├── types (ts 类型定义文件)
+	│	│   ├── axios.d.ts (扩展 axios 数据返回类型，可自行扩展)
+	│	│   ├── global.d.ts (全局 ts 类型定义申明)
+	│	│   ├── layout.d.ts (layout 布局 ts 类型定义申明)
+	│	│   ├── mitt.d.ts (mitt 事件总线 ts 类型定义申明)
+	│	│   ├── pinia.d.ts (pinia ts 类型定义申明)
+	│	│   └── views.d.ts (views 视图各界面 ts 类型定义申明)
 	│	│
 	│	├── utils (存放工具类函数)
 	│	│
@@ -141,10 +149,7 @@
 	├── LICENSE (开源许可证)
 	├── package-lock.json (npm锁定安装时的包的版本号)
 	├── package.json (包的依赖管理配置文件)
-	├── plugins.d.ts (声明文件或模块的语法)
 	├── README.md (框架介绍文件)
-	├── shim.d.ts (声明文件或模块的语法)
-	├── source.d.ts (声明文件或模块的语法)
 	├── tsconfig.json (ts配置文件)
 	└── vite.config.ts (vite配置文件)
 ```
@@ -156,9 +161,11 @@
 ```ts
 ├── vueNextAdmin
 	├── master (基于 vue3.x、vite、ts、Element plus等，主项目模板)
+	├── develop (开发分支，开发完将删除)
 	├── vue-prev-admin (基于 vue2.x、vue-cli、element ui 项目模板)
 	├── vue-next-admin-template (vue-next-admin 基础版 ts，不带国际化)
 	├── vue-next-admin-template-js (基于 vue-next-admin-template 修改 js 版，不带国际化)
+	├── vue-next-admin-nest (基于 nestjs+vue-next-admin 开发的权限控制系统（带后台@甜蜜蜜）)
 	├── vue-next-admin-mould (基于 vue3.x、vite、ts 配置了 eslint、prettier 通用项目模板)
 	├── electron (跨平台的桌面应用程序)
 	└── personal ( personal-个人项目)

@@ -25,7 +25,8 @@
 	│	│   ├── editor (富文本编辑器)
 	│	│   ├── iconSelector (图标选择器)
 	│	│   ├── noticeBar (滚动通知)
-	│	│   └── svgIcon (自定义封装 svg 图标)
+	│	│   ├── svgIcon (自定义封装 svg 图标)
+	│	│   └── table (自定义封装 table)
 	│	│
 	│	├── directive (自定义指令内容)
 	│	│
@@ -125,7 +126,8 @@
 	│			├── make (组件封装)
 	│			│   ├── selector (图标选择器)
 	│			│   ├── noticeBar (滚动通知栏)
-	│			│   └── svgDemo (滚动通知栏)
+	│			│   ├── svgDemo (svg 演示)
+	│			│   └── tableDemo (自定义封装 table)
 	│			├── params (路由参数演示)
 	│			│   ├── common (普通路由)
 	│			│   └── dynamic (动态路由)

@@ -14,7 +14,8 @@ import{_ as n,c as s,o as a,a as t}from"./app.fa60a211.js";const d='{"title":"\u
 	\u2502	\u2502   \u251C\u2500\u2500 <span class="token function">editor</span> <span class="token punctuation">(</span>\u5BCC\u6587\u672C\u7F16\u8F91\u5668<span class="token punctuation">)</span>
 	\u2502	\u2502   \u251C\u2500\u2500 <span class="token function">iconSelector</span> <span class="token punctuation">(</span>\u56FE\u6807\u9009\u62E9\u5668<span class="token punctuation">)</span>
 	\u2502	\u2502   \u251C\u2500\u2500 <span class="token function">noticeBar</span> <span class="token punctuation">(</span>\u6EDA\u52A8\u901A\u77E5<span class="token punctuation">)</span>
-	\u2502	\u2502   \u2514\u2500\u2500 <span class="token function">svgIcon</span> <span class="token punctuation">(</span>\u81EA\u5B9A\u4E49\u5C01\u88C5 svg \u56FE\u6807<span class="token punctuation">)</span>
+	\u2502	\u2502   \u251C\u2500\u2500 <span class="token function">svgIcon</span> <span class="token punctuation">(</span>\u81EA\u5B9A\u4E49\u5C01\u88C5 svg \u56FE\u6807<span class="token punctuation">)</span>
+	\u2502	\u2502   \u2514\u2500\u2500 <span class="token function">table</span> <span class="token punctuation">(</span>\u81EA\u5B9A\u4E49\u5C01\u88C5 table<span class="token punctuation">)</span>
 	\u2502	\u2502
 	\u2502	\u251C\u2500\u2500 <span class="token function">directive</span> <span class="token punctuation">(</span>\u81EA\u5B9A\u4E49\u6307\u4EE4\u5185\u5BB9<span class="token punctuation">)</span>
 	\u2502	\u2502
@@ -35,7 +36,8 @@ import{_ as n,c as s,o as a,a as t}from"./app.fa60a211.js";const d='{"title":"\u
 	\u2502	\u2502   \u2502   \u251C\u2500\u2500 <span class="token function">breadcrumb</span> <span class="token punctuation">(</span>\u9762\u5305\u5C51\u3001\u5173\u95ED\u5168\u5C4F\u3001\u83DC\u5355\u641C\u7D22\u3001\u5E03\u5C40\u914D\u7F6E\u3001\u7528\u6237\u4FE1\u606F\u3001\u6D88\u606F\u901A\u77E5<span class="token punctuation">)</span>
 	\u2502	\u2502   \u2502   \u2514\u2500\u2500 <span class="token function">tagsView</span> <span class="token punctuation">(</span>\u6807\u7B7E\u9875<span class="token punctuation">)</span>
 	\u2502	\u2502   \u251C\u2500\u2500 <span class="token function">navMenu</span> <span class="token punctuation">(</span>\u5BFC\u822A\u83DC\u5355<span class="token punctuation">)</span>
-	\u2502	\u2502   \u2514\u2500\u2500 <span class="token function">routerView</span> <span class="token punctuation">(</span>\u8DEF\u7531\u89C6\u56FE\u51FA\u53E3\u3001\u5916\u94FE\u3001iframe\u5185\u5D4C<span class="token punctuation">)</span>
+	\u2502	\u2502   \u251C\u2500\u2500 <span class="token function">routerView</span> <span class="token punctuation">(</span>\u8DEF\u7531\u89C6\u56FE\u51FA\u53E3\u3001\u5916\u94FE\u3001iframe\u5185\u5D4C<span class="token punctuation">)</span>
+	\u2502	\u2502   \u2514\u2500\u2500 <span class="token function">upgrade</span> <span class="token punctuation">(</span>\u7248\u672C\u5347\u7EA7\u63D0\u793A\u7EC4\u4EF6<span class="token punctuation">)</span>
 	\u2502	\u2502
 	\u2502	\u251C\u2500\u2500 <span class="token function">mock</span> <span class="token punctuation">(</span>\u5B58\u653E\u6A21\u62DF\u6570\u636E\uFF0C\u975Emock<span class="token punctuation">.</span>js\u3002\u7528\u4E8E\u57CE\u5E02\u591A\u7EA7\u8054\u52A8<span class="token punctuation">)</span>
 	\u2502	\u2502
@@ -114,7 +116,8 @@ import{_ as n,c as s,o as a,a as t}from"./app.fa60a211.js";const d='{"title":"\u
 	\u2502			\u251C\u2500\u2500 <span class="token function">make</span> <span class="token punctuation">(</span>\u7EC4\u4EF6\u5C01\u88C5<span class="token punctuation">)</span>
 	\u2502			\u2502   \u251C\u2500\u2500 <span class="token function">selector</span> <span class="token punctuation">(</span>\u56FE\u6807\u9009\u62E9\u5668<span class="token punctuation">)</span>
 	\u2502			\u2502   \u251C\u2500\u2500 <span class="token function">noticeBar</span> <span class="token punctuation">(</span>\u6EDA\u52A8\u901A\u77E5\u680F<span class="token punctuation">)</span>
-	\u2502			\u2502   \u2514\u2500\u2500 <span class="token function">svgDemo</span> <span class="token punctuation">(</span>\u6EDA\u52A8\u901A\u77E5\u680F<span class="token punctuation">)</span>
+	\u2502			\u2502   \u251C\u2500\u2500 <span class="token function">svgDemo</span> <span class="token punctuation">(</span>svg \u6F14\u793A<span class="token punctuation">)</span>
+	\u2502			\u2502   \u2514\u2500\u2500 <span class="token function">tableDemo</span> <span class="token punctuation">(</span>\u81EA\u5B9A\u4E49\u5C01\u88C5 table<span class="token punctuation">)</span>
 	\u2502			\u251C\u2500\u2500 <span class="token function">params</span> <span class="token punctuation">(</span>\u8DEF\u7531\u53C2\u6570\u6F14\u793A<span class="token punctuation">)</span>
 	\u2502			\u2502   \u251C\u2500\u2500 <span class="token function">common</span> <span class="token punctuation">(</span>\u666E\u901A\u8DEF\u7531<span class="token punctuation">)</span>
 	\u2502			\u2502   \u2514\u2500\u2500 <span class="token function">dynamic</span> <span class="token punctuation">(</span>\u52A8\u6001\u8DEF\u7531<span class="token punctuation">)</span>
@@ -151,4 +154,4 @@ import{_ as n,c as s,o as a,a as t}from"./app.fa60a211.js";const d='{"title":"\u
 	\u251C\u2500\u2500 vue<span class="token operator">-</span>next<span class="token operator">-</span>admin<span class="token operator">-</span><span class="token function">mould</span> <span class="token punctuation">(</span>\u57FA\u4E8E vue3<span class="token punctuation">.</span>x\u3001vite\u3001ts \u914D\u7F6E\u4E86 eslint\u3001prettier \u901A\u7528\u9879\u76EE\u6A21\u677F<span class="token punctuation">)</span>
 	\u251C\u2500\u2500 <span class="token function">electron</span> <span class="token punctuation">(</span>\u8DE8\u5E73\u53F0\u7684\u684C\u9762\u5E94\u7528\u7A0B\u5E8F<span class="token punctuation">)</span>
 	\u2514\u2500\u2500 <span class="token function">personal</span> <span class="token punctuation">(</span> personal<span class="token operator">-</span>\u4E2A\u4EBA\u9879\u76EE<span class="token punctuation">)</span>
-</code></pre></div>`,8),c=[o];function u(e,i,l,k,r,f){return a(),s("div",null,c)}var v=n(p,[["render",u]]);export{d as __pageData,v as default};
+</code></pre></div>`,8),c=[o];function u(e,l,i,k,r,f){return a(),s("div",null,c)}var v=n(p,[["render",u]]);export{d as __pageData,v as default};

@@ -47,7 +47,8 @@
 	│	│   │   ├── breadcrumb (面包屑、关闭全屏、菜单搜索、布局配置、用户信息、消息通知)
 	│	│   │   └── tagsView (标签页)
 	│	│   ├── navMenu (导航菜单)
-	│	│   └── routerView (路由视图出口、外链、iframe内嵌)
+	│	│   ├── routerView (路由视图出口、外链、iframe内嵌)
+	│	│   └── upgrade (版本升级提示组件)
 	│	│
 	│	├── mock (存放模拟数据，非mock.js。用于城市多级联动)
 	│	│

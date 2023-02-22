@@ -4,7 +4,15 @@
 [vue-prev-admin](https://gitee.com/lyt-top/vue-next-admin/tree/vue-prev-admin/) vue2.x 的目录结构也会基于该结构进行修改
 :::
 
-<p style="font-weight: bold;">一、目录结构图</p>
+## 长期赞助商
+
+vueNextAdmin 是免费和开源的，由优秀的赞助商提供支持 ❤️。
+
+<a href="http://www.ccflow.org/" target="_black" class="next-sponsors-item">
+  <img src="/images/ccflowRightNextAdmin.png" alt="驰骋流程+表单+低代码" title="驰骋流程+表单+低代码">
+</a>
+
+## 目录结构图
 
 > 目录结构将 `定期更新`。树结构生成 cmd 输入 `tree` 或 `tree /f`
 
@@ -48,7 +56,8 @@
 	│	│   │   └── tagsView (标签页)
 	│	│   ├── navMenu (导航菜单)
 	│	│   ├── routerView (路由视图出口、外链、iframe内嵌)
-	│	│   └── upgrade (版本升级提示组件)
+	│	│   ├── upgrade (版本升级提示组件)
+	│	│   └── sponsors (赞助商组件)
 	│	│
 	│	├── mock (存放模拟数据，非mock.js。用于城市多级联动)
 	│	│
@@ -157,7 +166,7 @@
 	└── vite.config.ts (vite配置文件)
 ```
 
-<p style="font-weight: bold;">二、仓库代码各分支说明（后续将添加更多分支）</p>
+## 仓库代码各分支说明（后续将添加更多分支）
 
 > 项目切换分支后，README.md 文件内容都会不一样，请注意看 README.md 文件中的第一项 介绍 内容，会大概介绍当前分支是干啥的。`基础版同步 master 分支主版本`
 

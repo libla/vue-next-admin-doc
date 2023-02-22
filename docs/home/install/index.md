@@ -4,14 +4,14 @@
 在安装使用本模板之前，您可能需要了解 git 的基本操作、使用，对 git 命令有一个总体的认识。认真看完，面试时也可以吹牛。可直接 [gitee](https://gitee.com/) 上创建仓库进行上手实践。git 命令参考文档：https://gitee.com/all-about-git
 :::
 
-<p style="font-weight: bold;">一、安装 cnpm、yarn，win + R，复制以下代码</p>
+## 安装 cnpm、yarn，win + R，复制以下代码
 
 - cnpm：`npm install -g cnpm --registry=https://registry.npm.taobao.org`
 - yarn：`npm install -g yarn`
 
 > 建议使用 cnpm，因为 npm 有时候安装会报错（网络卡）
 
-<p style="font-weight: bold;">二、vue3.x：master 分支</p>
+## vue3.x：master 分支
 
 ```bash
 # 克隆项目
@@ -30,7 +30,7 @@ cnpm run dev
 cnpm run build
 ```
 
-<p style="font-weight: bold;">三、vue2.x：vue-prev-admin 分支</p>
+## vue2.x：vue-prev-admin 分支
 
 > 切换分支前：记得删除 `node_modules`，因为各分支的依赖可能不同
 
@@ -55,7 +55,7 @@ cnpm run build
 
 ```
 
-<p style="font-weight: bold;">四、仓库代码各分支说明（后续将添加更多分支）</p>
+## 仓库代码各分支说明（后续将添加更多分支）
 
 > git 命令参考文档：https://gitee.com/all-about-git
 

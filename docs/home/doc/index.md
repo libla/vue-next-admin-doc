@@ -1,6 +1,6 @@
 # 学习文档
 
-<p style="font-weight: bold;">一、项目开发</p>
+## 项目开发
 
 - [vue3 文档地址：https://v3.cn.vuejs.org/](https://v3.cn.vuejs.org/)
 - [vue3 composition-Api 文档地址：https://composition-api.vuejs.org/zh/](https://composition-api.vuejs.org/zh/)
@@ -16,7 +16,7 @@
 - [typescript 文档地址：https://www.tslang.cn/docs/home.html](https://www.tslang.cn/docs/home.html)
 - [jsplumb 文档地址：https://wdd.js.org/jsplumb-chinese-tutorial/#/](https://wdd.js.org/jsplumb-chinese-tutorial/#/)
 
-<p style="font-weight: bold;">二、文档编写</p>
+## 文档编写
 
 - [vitepress 文档地址：https://vitepress.vuejs.org/](https://vitepress.vuejs.org/)
 - [vuepress 文档地址：https://vuepress.vuejs.org/zh/](https://vuepress.vuejs.org/zh/)

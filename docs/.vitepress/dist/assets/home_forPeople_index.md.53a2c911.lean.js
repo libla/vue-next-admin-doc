@@ -1,1 +1,0 @@
-import{_ as e,c as r,o as t,a as n}from"./app.fa60a211.js";const d='{"title":"\u9002\u7528\u4EBA\u7FA4","description":"","frontmatter":{},"headers":[],"relativePath":"home/forPeople/index.md"}',a={},o=n("",4),l=[o];function s(p,i,c,h,_,f){return t(),r("div",null,l)}var g=e(a,[["render",s]]);export{d as __pageData,g as default};

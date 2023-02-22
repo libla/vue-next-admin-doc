@@ -6,11 +6,11 @@
 
 请花点时间认真阅读以下内容，否则页面代码可能各种错误！若当前文件夹不在 `vsCode` 工作区中，请把项目拉出来（就是不要放进嵌套文件夹中，放最顶级可消除部分报红）。
 
-<p style="font-weight: bold;">一、vsCode 下载</p>
+## vsCode 下载
 
 官网地址：[https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-<p style="font-weight: bold;">二、vsCode 插件安装</p>
+## vsCode 插件安装
 
 > 2.1、点击左侧图标
 
@@ -133,7 +133,7 @@
 }
 ```
 
-<p style="font-weight: bold;">三、eslint 第一次可能出现以下问题</p>
+## eslint 第一次可能出现以下问题
 
 > 3.1、点击 `allow everywhere` 或者 `allow`
 
@@ -147,11 +147,11 @@
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210315104826364.png)
 
-<p style="font-weight: bold;">四、如果配置不生效，请尝试重启下 vsCode</p>
+## 如果配置不生效，请尝试重启下 vsCode
 
 安装完插件也请重启下 vsCode，有时有可能出现延迟生效，具体原因不详。
 
-<p style="font-weight: bold;">五、代码智能提示双提示问题</p>
+## 代码智能提示双提示问题
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4144c48d59c74b9eb312ddfb47ff9263.png)
 

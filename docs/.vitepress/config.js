@@ -36,31 +36,30 @@ module.exports = {
   title: "vue-next-admin",
   description:
     "🎉🎉🔥基于vue3.x 、Typescript、vite、Element plus等，适配手机、平板、pc 的后台开源免费模板库（vue2.x请切换vue-prev-admin分支）开发文档",
-  lang: "zh",
+  lang: "zh-CN",
   base: "/vue-next-admin-doc-preview/",
   themeConfig: {
     logo: "/images/logo-mini.svg",
     search: true,
-    repo: "https://gitee.com/lyt-top/vue-next-admin-doc",
-    repoLabel: "文档仓库",
-    editLinks: true,
-    editLinkText: "欢迎到 Gitee 上编辑此页！",
+    lastUpdated: true,
+    editLink: {
+      pattern:
+        "https://gitee.com/lyt-top/vue-next-admin-doc/edit/master/docs/:path",
+      text: "欢迎到 Gitee 上编辑此页",
+    },
     author: "lyt_20201208",
-    lastUpdated: "上次更新",
     algolia: {
       apiKey: "4d147eca3b892b30c89755c01165bc23",
       appId: "HQFOYY4X30",
       indexName: "vue-next-admin-doc-preview",
     },
+    footer: {
+      message: "根据 MIT 许可证发布",
+      copyright: "本文档内容版权为 vue-next-admin 作者所有，保留所有权利。",
+    },
     nav: [
-      {
-        text: "指南",
-        link: "/home/",
-      },
-      {
-        text: "配置参考",
-        link: "/config/",
-      },
+      { text: "指南", link: "/home/", activeMatch: "/home/" },
+      { text: "配置", link: "/config/", activeMatch: "/config/" },
       {
         text: "集成后端",
         items: [
@@ -116,10 +115,6 @@ module.exports = {
         ],
       },
       {
-        text: "更新日志",
-        link: "https://gitee.com/lyt-top/vue-next-admin/blob/master/CHANGELOG.md",
-      },
-      {
         text: "代码仓库",
         items: [
           {
@@ -132,12 +127,36 @@ module.exports = {
           },
         ],
       },
+      {
+        text: "日志 & 文档",
+        items: [
+          {
+            text: "更新日志",
+            link: "https://gitee.com/lyt-top/vue-next-admin/blob/master/CHANGELOG.md",
+          },
+          {
+            text: "文档仓库",
+            link: "https://gitee.com/lyt-top/vue-next-admin-doc",
+          },
+        ],
+      },
+      {
+        text: "合作 & 赞助",
+        link: "/support/",
+        activeMatch: "/support/",
+      },
+      {
+        text: "商城",
+        link: "/shop/",
+        activeMatch: "/shop/",
+      },
     ],
     sidebar: {
       "/home/": [
         {
           text: "入门须知",
-          children: [
+          collapsed: false,
+          items: [
             { text: "许可", link: "/home/" },
             { text: "兼容性", link: "/home/compatible/" },
             { text: "适用人群", link: "/home/forPeople/" },
@@ -147,7 +166,8 @@ module.exports = {
         },
         {
           text: "开发指南",
-          children: [
+          collapsed: false,
+          items: [
             { text: "介绍", link: "/home/introduce/" },
             { text: "安装", link: "/home/install/" },
             { text: "其它", link: "/home/fast/" },
@@ -155,7 +175,8 @@ module.exports = {
         },
         {
           text: "代码规范",
-          children: [
+          collapsed: false,
+          items: [
             { text: "eslint", link: "/home/eslint/" },
             { text: "prettier", link: "/home/prettier/" },
             { text: "vsCode 配置", link: "/home/vscode/" },
@@ -166,7 +187,8 @@ module.exports = {
       "/config/": [
         {
           text: "基础",
-          children: [
+          collapsed: false,
+          items: [
             { text: "简介", link: "/config/" },
             { text: "菜单配置", link: "/config/menu/" },
             { text: "布局配置", link: "/config/layoutConfig/" },
@@ -178,7 +200,8 @@ module.exports = {
         },
         {
           text: "高级",
-          children: [
+          collapsed: false,
+          items: [
             { text: "权限管理", link: "/config/power/" },
             { text: "路由参数", link: "/config/route/" },
             { text: "国际化", link: "/config/i18n/" },
@@ -188,7 +211,8 @@ module.exports = {
         },
         {
           text: "其它",
-          children: [
+          collapsed: false,
+          items: [
             { text: "数据可视化", link: "/config/charts/" },
             { text: "工具类集合", link: "/config/tool/" },
             { text: "第三方插件使用", link: "/config/partyPlug/" },
@@ -196,9 +220,27 @@ module.exports = {
             { text: "其它问题", link: "/config/otherIssues/" },
           ],
         },
+      ],
+      "/shop/": [
         {
-          text: "赞助",
-          children: [{ text: "支持开源", link: "/config/support/" }],
+          text: "首页",
+          collapsed: false,
+        },
+        {
+          text: "分类",
+          collapsed: false,
+        },
+        {
+          text: "服务",
+          collapsed: false,
+        },
+        {
+          text: "购物车",
+          collapsed: false,
+        },
+        {
+          text: "我的",
+          collapsed: false,
         },
       ],
     },

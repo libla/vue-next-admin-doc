@@ -442,7 +442,7 @@ const onColorPickerChange = (color: string) => {
 
 > 此项目包含四个布局：默认、经典、横向、分栏。查看大图，鼠标右键：`在新标签页中打开图片`
 
-<img src="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/defaults.png" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/classic.png" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/transverse.png" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/columns.png" width="50%" style="border: 1px solid var(--c-brand);">
+<img src="https://img-blog.csdnimg.cn/c3248cfc00cf404fbc3a28a286a95fb2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
+<img src="https://img-blog.csdnimg.cn/25ca8d809aae428c8589c376eab3980e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
+<img src="https://img-blog.csdnimg.cn/c636cb89741644f49a627b0a690c5aae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
+<img src="https://img-blog.csdnimg.cn/e05cd231ff234110973ea0db6dc5c3a7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">

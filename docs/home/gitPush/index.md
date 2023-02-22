@@ -4,7 +4,7 @@
 在安装使用本模板之前，您可能需要了解 git 的基本操作、使用，对 git 命令有一个总体的认识。认真看完，面试时也可以吹牛。可直接 [gitee](https://gitee.com/) 上创建仓库进行上手实践。git 命令参考文档：https://gitee.com/all-about-git
 :::
 
-<p style="font-weight: bold;">一、参考 vue 规范 (Angular)</p>
+## 参考 vue 规范 (Angular)
 
 ```bash
 feat 增加新功能
@@ -22,7 +22,7 @@ types 类型定义文件更改
 wip 开发中
 ```
 
-<p style="font-weight: bold;">二、提交 commit</p>
+## 提交 commit
 
 ```bash
 git commit -m feat:Add workflow, homepage, etc.

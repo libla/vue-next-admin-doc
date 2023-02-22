@@ -4,13 +4,13 @@
 此配置仅适用于 [vue-next-admin](https://gitee.com/lyt-top/vue-next-admin) 后台开源免费模板，其它语言 react 或者其它 vue-admin 项目等报错请自行调整。（这是关于 vue-next-admin：vue3 + vite + typescript + eslint + prettier + vscode 的配置说明）
 :::
 
-<p style="font-weight: bold;">一、安装对应的 eslint 依赖</p>
+## 安装对应的 eslint 依赖
 
 ```bash
 cnpm install --save-dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-plugin-vue vue-eslint-parser
 ```
 
-<p style="font-weight: bold;">二、根目录新建 .eslintrc.js</p>
+## 根目录新建 .eslintrc.js
 
 其它格式 .eslintrc.\*，参考：http://eslint.cn/docs/user-guide/configuring
 
@@ -50,7 +50,7 @@ module.exports = {
 - `1` 或 `warn`： 打开规则，并且作为一个警告，字体颜色为黄色（并不会导致检查不通过）
 - `2` 或 `error`：打开规则，并且作为一个错误 ，色体颜色为红色(退出码为 1，检查不通过)
 
-<p style="font-weight: bold;">三、.eslintignore 忽略特定的文件</p>
+## .eslintignore 忽略特定的文件
 
 你可以通过在项目根目录创建一个 `.eslintignore` 文件告诉 ESLint 去忽略特定的文件和目录。`.eslintignore` 文件是一个纯文本文件，其中的每一行都是一个 `glob` 模式表明哪些路径应该忽略检测。
 
@@ -78,7 +78,7 @@ index.html
 src/assets
 ```
 
-<p style="font-weight: bold;">四、关闭 eslint 检查</p>
+## 关闭 eslint 检查
 
 eslint 可以配置在开发环境中，帮助我们找出项目中不符合规则的代码并给出提示。在我们的开发环境中，开发者每次修改代码，都会先用 eslint 检查代码，这样可以让 eslint 随时提醒开发者代码是否符合规范，从而降低低级 bug 的出现。`所以不建议关闭 eslint 检查`。
 

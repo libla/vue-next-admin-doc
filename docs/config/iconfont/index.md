@@ -383,3 +383,12 @@ app.component("SvgIcon", SvgIcon);
 <!-- 或者 -->
 <SvgIcon name="iconfont xitongshezhi"></SvgIcon>
 ```
+
+<p style="font-weight: bold;">三、群文件有 vue-next-admin、vue-prev-admin 离线字体图标</p>
+
+[去加群](/)，搜不到群，或者加了没同意，一般是群满了（一般秒过）。
+
+- 1 群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=RdUY97Vx0T0vZ_1OOu-X1yFNkWgDwbjC&jump_from=webapi">665452019</a>
+- 2 群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=zVfy3gNy7pNWVK3kMduDzwU369PZg2fw&jump_from=webapi">766356862</a>
+- 3 群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=02EWb5P2JkP-8iwzaDadgFdxA0HSHPpn&jump_from=webapi">795345435</a>
+- 4 群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=0gTFO04WwkeZZ6R4lju6gucbeXHK-wNd&jump_from=webapi">736626228</a>

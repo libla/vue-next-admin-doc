@@ -1,1 +1,0 @@
-import{_ as e,c as t,o,a as i}from"./app.fa60a211.js";const g='{"title":"\u6570\u636E\u53EF\u89C6\u5316","description":"","frontmatter":{},"headers":[],"relativePath":"config/charts/index.md"}',a={},r=i("",8),n=[r];function s(c,l,d,p,_,h){return o(),t("div",null,n)}var u=e(a,[["render",s]]);export{g as __pageData,u as default};

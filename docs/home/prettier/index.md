@@ -6,17 +6,17 @@
 
 `prettier` 的中文意思是“漂亮的、机灵的”，是一个有主见的代码格式化程序。用来批量处理旧代码的统一,涉及引号，分号，换行，缩进。支持目前大部分语言处理，包括 JavaScript，Flow，TypeScript，CSS，SCSS，Less，JSX，Vue，GraphQL，JSON，Markdown。它通过解析您的代码并使用自己的规则来重新打印出格式规范的代码。
 
-<p style="font-weight: bold;">一、安装对应的 prettier 依赖</p>
+## 安装对应的 prettier 依赖
 
 ```bash
 cnpm install --save-dev prettier
 ```
 
-<p style="font-weight: bold;">二、根目录新建 .prettierrc.js</p>
+## 根目录新建 .prettierrc.js
 
 参考文档：https://prettier.io/docs/en/
 
-复制粘贴以下内容：
+复制粘贴以下内容到 `.prettierrc.js` 中：
 
 ```ts
 module.exports = {

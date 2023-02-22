@@ -1,6 +1,6 @@
 {
   "name": "vue-next-admin-doc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "基于vue3.x 、Typescript、vite、Element plus等，适配手机、平板、pc 的后台开源免费模板库（vue2.x请切换vue-prev-admin分支）开发文档",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "author": "lyt_20201208",
   "license": "MIT",
   "dependencies": {
-    "vitepress": "^0.22.4",
+    "vitepress": "^1.0.0-alpha.47",
     "stylus": "^0.59.0",
     "stylus-loader": "^7.1.0"
   }

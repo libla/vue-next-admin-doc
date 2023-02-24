@@ -1,22 +1,24 @@
 # 内置指令的使用
 
 ::: tip 开始之前
-您可能需要了解 [vue 自定义指令](https://v3.cn.vuejs.org/guide/custom-directive.html)。`/@/utils/directive.ts` 目录下，各文件说明 [其它-工具类集合](/config/tool/)。
+您可能需要了解 [vue 自定义指令](https://v3.cn.vuejs.org/guide/custom-directive.html)。[/src/directive.ts](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/directive) 目录下，各文件说明 [其它-工具类集合](/config/tool/)。
 :::
 
 ## 按钮权限
 
-> 参考 [高级-按钮权限](/config/power/#按钮权限) 章节
+参考 [高级-按钮权限](/config/power/#按钮权限) 章节
 
 ## 波浪
 
-<p style="font-weight: bold;">一、代码路径</p>
+### 1. 代码路径
 
-> 代码路径：`/@/utils/customDirective.ts` 中的 `wavesDirective` 方法，可选参数 v-waves=" |light|red|orange|purple|green|teal"
+代码路径：[/src/directive/customDirective.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/directive/customDirective.ts) 中的 `wavesDirective` 方法，
 
-<p style="font-weight: bold;">二、使用方法</p>
+可选参数：v-waves="< |light|red|orange|purple|green|teal>"，默认 `' '`
 
-> 1.1、作用于 btn
+### 2. 使用方法
+
+- 作用于 btn
 
 ```html
 <el-button size="small" v-waves>
@@ -25,7 +27,7 @@
 </el-button>
 ```
 
-> 1.2、作用于 div
+- 作用于 div
 
 ```html
 <div class="waterfall-first-item" v-for="v in 12" :key="v" v-waves>
@@ -35,22 +37,28 @@
 </div>
 ```
 
-<p style="font-weight: bold;">三、演示地址</p>
+### 3. 演示地址
 
-> [波浪指令效果（v-waves）](https://lyt-top.gitee.io/vue-next-admin-preview/#/pages/waves)
+[波浪指令效果（v-waves）](https://lyt-top.gitee.io/vue-next-admin-preview/#/pages/waves)
 
 ## 弹窗拖动
 
-<p style="font-weight: bold;">一、代码路径</p>
+### 1. 代码路径（弹窗）
 
-> 代码路径：`/@/utils/customDirective.ts` 中的 `dragDirective` 方法
+代码路径：[/src/directive/customDirective.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/directive/customDirective.ts) 中的 `dragDirective` 方法
 
-<p style="font-weight: bold;">二、使用方法</p>
+### 2. 使用方法（弹窗）
 
-- 参数一：dragDom 要拖动的元素
-- 参数二：dragHeader 要拖动的 Header 位置（鼠标放入会变成手指状）
+::: tip 参数说明
 
-> 1.1、自定义 div。注意看 `.drag-container .drag-dom` 说明：选择作为类名 `.drag-container` 元素后代的所有类名 `.drag-dom` 元素（只要是防止页面上出现相同类名时，拿到的值不对的问题）。您可能需要了解 [CSS 选择器](https://www.w3school.com.cn/css/css_selector_type.asp)
+参数一：dragDom 要拖动的元素
+
+参数二：dragHeader 要拖动的 Header 位置（鼠标放入会变成手指状）
+:::
+
+- 自定义 div。注意看 `.drag-container .drag-dom` 说明：选择作为类名 `.drag-container` 元素后代的所有类名 `.drag-dom` 元素（只要是防止页面上出现相同类名时，拿到的值不对的问题）。
+
+您可能需要了解 [CSS 选择器](https://www.w3school.com.cn/css/css_selector_type.asp)
 
 ```html {7}
 <div class="drag-container">
@@ -71,7 +79,7 @@
 </div>
 ```
 
-> 1.2、作用于 Dialog 对话框，不支持指令直接放 `el-dialog` 上，所以得自定义插槽 `<template #title>`
+- 作用于 Dialog 对话框，不支持指令直接放 `el-dialog` 上，所以得自定义插槽 `<template #title>`
 
 ```html {14}
 <!-- 按钮 -->
@@ -103,6 +111,6 @@
 </el-dialog>
 ```
 
-<p style="font-weight: bold;">三、演示地址</p>
+### 3. 演示地址（弹窗）
 
-> [拖动指令效果（v-drag）作用于 Dialog 对话框](https://lyt-top.gitee.io/vue-next-admin-preview/#/pages/drag)
+[拖动指令效果（v-drag）作用于 Dialog 对话框](https://lyt-top.gitee.io/vue-next-admin-preview/#/pages/drag)

@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as r,a as o}from"./app.83bee338.js";const g=JSON.parse('{"title":"兼容性","description":"","frontmatter":{},"headers":[],"relativePath":"home/compatible/index.md"}'),s={name:"home/compatible/index.md"},a=o("",5),n=[a];function d(l,i,c,h,p,_){return r(),t("div",null,n)}const f=e(s,[["render",d]]);export{g as __pageData,f as default};

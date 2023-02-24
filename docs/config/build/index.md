@@ -6,20 +6,22 @@
 
 ## 打包
 
-<p style="font-weight: bold;">一、.env 文件</p>
+### 1. .env 文件
 
-> 根目录 `.env` 文件，去了解 [.env-文件](/config/server/#env-文件)。`/vue-next-admin-preview/` 为预览仓库 [vue-next-admin-preview](https://gitee.com/lyt-top/vue-next-admin-preview) 的仓库名，打包时得根据具体情况进行修改打包路径。
+根目录 `.env` 文件，去了解 [.env-文件](/config/server/#env-文件)。`/vue-next-admin-preview/` 为预览仓库 [vue-next-admin-preview](https://gitee.com/lyt-top/vue-next-admin-preview) 的仓库名，打包时得根据具体情况进行修改打包路径。
 
 ```bash
 # public path 配置线上环境路径（打包）、本地通过 http-server 访问时，请置空即可
 VITE_PUBLIC_PATH = /vue-next-admin-preview/
 ```
 
-<p style="font-weight: bold;">二、打包后链接效果</p>
+### 2. 打包后链接效果
+
+注意看下图 `圈起来` 红色部分路径。
 
 <img src="https://img-blog.csdnimg.cn/1f5484d02645451d94ccfffab1cb09db.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16">
 
-<p style="font-weight: bold;">三、打包命令</p>
+### 3. 打包命令
 
 ```bash
 # 项目根目录运行
@@ -33,15 +35,15 @@ cnpm run build
 
 ## 预览
 
-<p style="font-weight: bold;">一、本地预览</p>
+### 1. 本地预览
 
-> 1.1、本地预览必须把：根目录 `.env` 文件中的 `VITE_PUBLIC_PATH` 置空
+- 本地预览必须把：根目录 `.env` 文件中的 `VITE_PUBLIC_PATH` 置空
 
 ```bash
 VITE_PUBLIC_PATH = ''
 ```
 
-> 1.2、安装 `http-server` 插件，或者拖到 `HBuilderX` 中去
+- 安装 `http-server` 插件，或者拖到 `HBuilderX` 中去
 
 ```bash
 # 安装
@@ -51,7 +53,7 @@ cnpm install -g http-server
 http-server
 ```
 
-> 1.3、或者在 `package.json` 中添加脚本
+- 或者在 `package.json` 中添加脚本
 
 ```json {5}
 "scripts": {
@@ -65,7 +67,7 @@ http-server
 cnpm run serve
 ```
 
-> 1.4、成功代码
+- 成功代码
 
 ```bash
 λ cnpm run serve
@@ -91,6 +93,6 @@ Available on:
 Hit CTRL-C to stop the server
 ```
 
-<p style="font-weight: bold;">二、线上预览</p>
+### 2. 线上预览
 
-> 部署到服务器，方法 [自行前往学习](https://www.baidu.com/)。
+部署到服务器，方法 [自行前往学习](https://www.baidu.com/)。

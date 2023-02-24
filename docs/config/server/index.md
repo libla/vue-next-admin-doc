@@ -6,7 +6,7 @@
 框架中使用 [Axios](https://www.kancloud.cn/yunye/axios/234845) HTTP 库，您可能需要了解 [vite 环境变量和模式章节](https://vitejs.cn/guide/env-and-mode.html)
 :::
 
-> 1.1、配置文件有（框架中的根目录）
+### 1. 配置文件有（框架中的根目录）
 
 ```bash
 .env              # 全局默认配置文件，不论什么环境都会加载合并
@@ -14,7 +14,7 @@
 .env.production   # 生产环境下的配置文件
 ```
 
-> 1.2、命名规则
+### 2. 命名规则
 
 为了防止意外地将一些环境变量泄漏到客户端，只有以 `VITE_` 为前缀的变量才会暴露给经过 vite 处理的代码。例如下面这个文件中：
 
@@ -27,9 +27,9 @@ VITE_SOME_KEY = 123
 
 ## axios 封装
 
-> [Axios](https://www.kancloud.cn/yunye/axios/234845) 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。
+[Axios](https://www.kancloud.cn/yunye/axios/234845) 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。
 
-<p style="font-weight: bold;">一、特征</p>
+### 1. 特征
 
 - 从浏览器中创建 XMLHttpRequests
 - 从 node.js 创建 http 请求
@@ -40,11 +40,11 @@ VITE_SOME_KEY = 123
 - 自动转换 JSON 数据
 - 客户端支持防御 XSRF
 
-<p style="font-weight: bold;">二、框架中创建 axios</p>
+### 2. 框架中创建 axios
 
-文件路径：`/@/utils/request.ts`
+文件路径：[/@/utils/request.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/request.ts)
 
-> 1.1、配置新建一个 axios 实例，对 `import.meta.env.VITE_API_URL` 不了解？请移步 [env-文件](/config/server/#env-文件)
+- 配置新建一个 axios 实例，对 `import.meta.env.VITE_API_URL` 不了解？请移步 [env-文件](/config/server/#env-文件)
 
 ```ts
 const service = axios.create({
@@ -54,13 +54,19 @@ const service = axios.create({
 });
 ```
 
-> 1.2、添加请求拦截器
+### 3. 添加请求拦截器
 
-```ts
+::: danger 注意 axios 版本
+
+v1.x.x 之后是没有 `common` 字段了，注意去 [package.json](https://gitee.com/lyt-top/vue-next-admin/blob/master/package.json) 中查看 `axios` 版本
+:::
+
+```ts{6}
 service.interceptors.request.use(
   (config) => {
     // 在发送请求之前做些什么 token
     if (Session.get("token")) {
+      // config.headers!['Authorization'] = `${Session.get('token')}`;
       config.headers.common["Authorization"] = `${Session.get("token")}`;
     }
     return config;
@@ -72,7 +78,9 @@ service.interceptors.request.use(
 );
 ```
 
-> 1.3、添加响应拦截器。注意`高亮处`的判断，根据后端接口返回的参数做具体判断，否则可能拿不到接口返回的数据
+### 4. 添加响应拦截器
+
+注意`高亮处`的判断，根据 `后端接口返回的参数` 做具体判断，否则可能 `拿不到接口返回的数据`。此处根据需求自行修改，非固定。
 
 ```ts {5,7}
 service.interceptors.response.use(
@@ -110,19 +118,21 @@ service.interceptors.response.use(
 
 ## 使用说明
 
-<p style="font-weight: bold;">一、统一 api 文件夹</p>
+### 1. 统一 api 文件夹
 
-> `/src` 下新建 `/src/api` 文件夹。建议每一个模块，都新建一个文件夹（文件夹名称与模块名称相同，方便维护）。如：`login 模块`，api 文件夹下新建 `/@/api/login` 文件夹
+`/src` 下新建 [/src/api 文件夹](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/api)。建议每一个模块，都新建一个文件夹（文件夹名称与模块名称相同，方便维护）。
+
+如：`login 模块`，api 文件夹下新建 `/@/api/login` 文件夹
 
 <img src="https://img-blog.csdnimg.cn/415d360a095e4c4daefb909c5d61963f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
-<p style="font-weight: bold;">二、统一 api 管理</p>
+### 2. 统一 api 管理
 
-> 1.1、前端定义接口函数
+- 前端定义接口函数，格式看自己喜欢咋用就咋用，不一定非要使用以下写法格式。框架内目前写法 [/src/api/login/index.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/api/login/index.ts)
 
 如：`/@/api/login/index.ts` 目录下，选择方法定义：
 
-方法一
+`方法一`
 
 ```ts
 // 先引入经过自定义全局封装的 axios
@@ -142,7 +152,7 @@ export function signIn(params: object) {
 }
 ```
 
-方法二
+`方法二`
 
 ```ts
 // 先引入经过自定义全局封装的 axios
@@ -171,7 +181,7 @@ export default function () {
 }
 ```
 
-方法三
+`方法三`
 
 ```ts
 // 先引入经过自定义全局封装的 axios
@@ -206,9 +216,9 @@ const apiLogin = {
 export default apiLogin;
 ```
 
-> 1.2、前端界面使用接口函数（方法与 `1.1、前端定义接口函数` 相对应）
+- 前端界面使用接口函数（方法与 `1.1、前端定义接口函数` 相对应）
 
-方法一
+`方法一`
 
 ```ts {3,8}
 <script lang="ts">
@@ -229,7 +239,7 @@ export default {
 </script>
 ```
 
-方法二
+`方法二`
 
 ```ts {3,8}
 <script lang="ts">
@@ -251,7 +261,7 @@ export default {
 </script>
 ```
 
-方法三
+`方法三`
 
 ```ts {3,8}
 <script lang="ts">
@@ -274,25 +284,25 @@ export default {
 
 ## 跨域处理
 
-<p style="font-weight: bold;">一、最常见跨域代码</p>
+出于浏览器的一种安全机制同源策略影响，来限制不同源的网站不能通信。同源就是域名、协议、端口一致。
+
+### 1. 最常见跨域代码
 
 Access to XMLHttpRequest at `'https://gitee.com/lyt-top/vue-next-admin-images/raw/master/menu/adminMenu.json'` from origin `'http://localhost:8888'` has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No `'Access-Control-Allow-Origin'` header is present on the requested resource.
 
-<p style="font-weight: bold;">二、跨域处理</p>
+### 2. 跨域处理
 
-> 1.1、线上
+- 线上：nginx 配置反向代理
 
-nginx 配置反向代理
-
-> 1.2、本地
+- 本地
 
 ::: tip 自定义代理
-[server.proxy](https://cn.vitejs.dev/config/#server-proxy)，为开发服务器配置自定义代理规则。
+[server.proxy](https://cn.vitejs.dev/config/server-options.html#server-proxy)，为开发服务器配置自定义代理规则。
 :::
 
 解决：查看文章：[vue cli 4.0+ 解决前端跨域问题](https://blog.csdn.net/qq_34450741/article/details/107444815)
 
-源跨域代码：
+源跨域 `api` 代码：
 
 ```ts {1}
 const url = "https://gitee.com";
@@ -311,7 +321,7 @@ export function getMenuAdmin(params?: object) {
 }
 ```
 
-处理跨域后代码：（根目录 `vite.config.ts` [server.proxy](https://cn.vitejs.dev/config/#server-proxy)，为开发服务器配置自定义代理规则）
+处理跨域后代码：（根目录 [vite.config.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/vite.config.ts) [server.proxy](https://cn.vitejs.dev/config/server-options.html#server-proxy)，为开发服务器配置自定义代理规则）
 
 ```ts {4,18}
 // 根目录 vite.config.ts
@@ -337,9 +347,9 @@ export function getMenuAdmin(params?: object) {
 }
 ```
 
-## 其它示例
+## 其它请求示例
 
-<p style="font-weight: bold;">一、下载文件</p>
+### 1. 下载文件
 
 ```ts {6}
 import request from "/@/utils/request";
@@ -355,7 +365,7 @@ export function downloadFile(params) {
 }
 ```
 
-<p style="font-weight: bold;">二、清除请求头 token</p>
+### 2. 清除请求头 token
 
 ```ts
 import request from "/@/utils/request";

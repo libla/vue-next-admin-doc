@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,a as o}from"./app.83bee338.js";const f=JSON.parse('{"title":"LICENSE","description":"","frontmatter":{},"headers":[],"relativePath":"home/index.md"}'),s={name:"home/index.md"},n=o("",3),r=[n];function c(i,_,d,l,p,m){return a(),t("div",null,r)}const u=e(s,[["render",c]]);export{f as __pageData,u as default};

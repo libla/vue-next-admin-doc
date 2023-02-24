@@ -1,4 +1,10 @@
-module.exports = {
+import { defineConfig } from "vitepress";
+
+/**
+ * 找不到配置字段，按住 Ctrl + 鼠标移动到对应字段上点击，
+ * 去 xxx.d.ts 类型定义文件中找相对应字段
+ */
+export default defineConfig({
   head: [
     [
       "link",
@@ -38,10 +44,13 @@ module.exports = {
     "🎉🎉🔥基于vue3.x 、Typescript、vite、Element plus等，适配手机、平板、pc 的后台开源免费模板库（vue2.x请切换vue-prev-admin分支）开发文档",
   lang: "zh-CN",
   base: "/vue-next-admin-doc-preview/",
+  lastUpdated: true,
   themeConfig: {
     logo: "/images/logo-mini.svg",
     search: true,
-    lastUpdated: true,
+    outlineTitle: "导航目录",
+    outline: "deep",
+    lastUpdatedText: "上次更新",
     editLink: {
       pattern:
         "https://gitee.com/lyt-top/vue-next-admin-doc/edit/master/docs/:path",
@@ -56,6 +65,10 @@ module.exports = {
     footer: {
       message: "根据 MIT 许可证发布",
       copyright: "本文档内容版权为 vue-next-admin 作者所有，保留所有权利。",
+    },
+    docFooter: {
+      prev: "上一页",
+      next: "下一页",
     },
     nav: [
       { text: "指南", link: "/home/", activeMatch: "/home/" },
@@ -245,4 +258,4 @@ module.exports = {
       ],
     },
   },
-};
+});

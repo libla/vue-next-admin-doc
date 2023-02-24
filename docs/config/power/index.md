@@ -1,18 +1,28 @@
 # 权限管理
 
+## 目录结构
+
+代码位置：[/src/router](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/router)
+
+`后端控制` 与 `前端控制` 文件是相互独立的（互不影响），`后端控制` 不需要 `roles` 字段
+
+```ts
+├── router (存放路由信息)
+	├── backEnd.ts (后端控制)
+	├── frontEnd.ts (前端控制)
+	├── index.ts (公用函数，路由拦截等)
+	└── route.ts (路由菜单数据)
+```
+
 ## 页面权限
 
-::: tip 提示
-不管是前端写路由还是后端接口返回路由，都会重新走 [页面权限-过滤有权限路由](/config/power/#过滤有权限路由) 方法。
-:::
+### 1. 角色权限标识
 
-### 角色权限标识
-
-> 1.1、用户信息中的 `roles` 角色权限标识，用于 `/@/router/route.ts` 中的 `meta.roles` 获取当前用户角色权限标识去比对路由表，设置递归过滤有权限的路由。图片中所示数据为 `/@/views/login/component/account.vue` 前端写死模拟数据，可在浏览器 `F12`：`Application/Storage/Session Storage` 中的 `userInfo` 字段中查看。
+- 用户信息中的 `roles` 角色权限标识，用于 `/@/router/route.ts` 中的 `meta.roles` 获取当前用户角色权限标识去比对路由表，设置递归过滤有权限的路由。图片中所示数据为 `/@/views/login/component/account.vue` 前端写死模拟数据，可在浏览器 `F12`：`Application/Storage/Session Storage` 中的 `userInfo` 字段中查看。
 
 <img src="https://img-blog.csdnimg.cn/618ad1d3fc2d41f8b0b5dcd345e544b3.png">
 
-> 1.2、`/@/router/route.ts` 文件。[菜单配置-参数说明](/config/menu/#参数说明)
+- [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件。[菜单配置-参数说明](/config/menu/#参数说明)
 
 ```ts
 {
@@ -26,9 +36,9 @@
 }
 ```
 
-### 过滤有权限路由
+### 2. 过滤有权限路由
 
-> 1.1、递归过滤有权限的路由，代码位置：`/@/router/index.ts`
+- 递归过滤有权限的路由，代码位置：[/@/router/index.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/index.ts)
 
 ```ts
 /**
@@ -63,20 +73,20 @@ export function setFilterHasRolesMenu(routes: any, roles: any) {
 }
 ```
 
-> 1.2、方法调用，`rolesRoutes` 为根据角色权限标识处理后，返回有权限的路由数组
+- 方法调用，`rolesRoutes` 为根据角色权限标识处理后，返回有权限的路由数组
 
 ```ts
 import { dynamicRoutes } from "/@/router/route";
 
-let rolesRoutes = setFilterHasRolesMenu(
+const rolesRoutes = setFilterHasRolesMenu(
   dynamicRoutes,
   store.state.userInfos.userInfos.roles
 );
 ```
 
-### 权限路由执行顺序
+### 3. 权限路由执行顺序
 
-> 1.1、先添加动态路由 `router.addRoute`。您可能需要了解 [router.addRoute](https://next.router.vuejs.org/zh/api/#addroute)
+- 先添加动态路由 `router.addRoute`。您可能需要了解 [router.addRoute](https://next.router.vuejs.org/zh/api/#addroute)
 
 ```ts
 /**
@@ -94,7 +104,7 @@ export function setAddRoute() {
 }
 ```
 
-> 1.2、后设置递归过滤有权限的路由到 vuex routesList 中（已处理成多级嵌套路由）及缓存多级嵌套数组处理后的一维数组。`setFilterHasRolesMenu` 为 [页面权限-过滤有权限路由](/config/power/#过滤有权限路由) 方法
+- 后设置递归过滤有权限的路由到 vuex routesList 中（已处理成多级嵌套路由）及缓存多级嵌套数组处理后的一维数组。`setFilterHasRolesMenu` 为 [页面权限-过滤有权限路由](/config/power/#过滤有权限路由) 方法
 
 ```ts
 /**
@@ -126,68 +136,58 @@ export function setFilterMenuAndCacheTagsViewRoutes() {
 - 2、或者取 [菜单管理（演示）](https://lyt-top.gitee.io/vue-next-admin-preview/#/system/menu) 中的按钮 `权限标识`。
   :::
 
-### 组件方式
+### 1. 组件方式
 
-> 组件位置：`/@/components/auth`，您可能需要了解 [插槽 slot](https://v3.cn.vuejs.org/guide/component-slots.html)
+组件位置：[/@/components/auth](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/components/auth)，您可能需要了解 [插槽 slot](https://v3.cn.vuejs.org/guide/component-slots.html)
 
-<p style="font-weight: bold;">一、单个权限验证（:value="xxx"）</p>
+#### 单个权限验证（:value="xxx"）
 
-> 1.1、组件代码，注意看 `some` 高亮处判断，根据需求适当时候需要自行修改
+- 组件代码，注意看 `some` 高亮处判断，根据需求适当时候需要自行修改
 
-```html {21-23}
+```html {23-25}
 <template>
   <slot v-if="getUserAuthBtnList" />
 </template>
 
-<script lang="ts">
+<script setup lang="ts" name="auth">
   import { computed } from "vue";
-  import { useStore } from "/@/store/index";
-  export default {
-    name: "auth",
-    props: {
-      value: {
-        type: String,
-        default: () => "",
-      },
+  import { storeToRefs } from "pinia";
+  import { useUserInfo } from "/@/stores/userInfo";
+
+  // 定义父组件传过来的值
+  const props = defineProps({
+    value: {
+      type: String,
+      default: () => "",
     },
-    setup(props) {
-      const store = useStore();
-      // 获取 vuex 中的用户权限
-      const getUserAuthBtnList = computed(() => {
-        return store.state.userInfos.userInfos.authBtnList.some(
-          (v: any) => v === props.value
-        );
-      });
-      return {
-        getUserAuthBtnList,
-      };
-    },
-  };
+  });
+
+  // 定义变量内容
+  const stores = useUserInfo();
+  const { userInfos } = storeToRefs(stores);
+
+  // 获取 pinia 中的用户权限
+  const getUserAuthBtnList = computed(() => {
+    return userInfos.value.authBtnList.some((v: string) => v === props.value);
+  });
 </script>
 ```
 
-> 1.2、页面中使用
+- 页面中使用
 
-```html {3,9,14}
+```html {3,8}
 <template>
   <!-- 使用 -->
   <Auth :value="'btn.add'" />
 </template>
 
-<script lang="ts">
-  import { defineComponent } from "vue";
+<script setup lang="ts" name="xxx">
   // 局部引入
   import Auth from "/@/components/auth/auth.vue";
-
-  export default defineComponent({
-    name: "xxxx",
-    // 局部注册
-    components: { Auth },
-  });
 </script>
 ```
 
-<p style="font-weight: bold;">二、多个权限验证，满足一个则显示（:value="[xxx,xxx]"）</p>
+#### 多个权限验证，满足一个则显示（:value="[xxx,xxx]"）
 
 ```html {3,9,14}
 <template>
@@ -208,7 +208,7 @@ export function setFilterMenuAndCacheTagsViewRoutes() {
 </script>
 ```
 
-<p style="font-weight: bold;">三、多个权限验证，全部满足则显示（:value="[xxx,xxx]"）</p>
+#### 多个权限验证，全部满足则显示（:value="[xxx,xxx]"）
 
 ```html {3,9,14}
 <template>
@@ -229,11 +229,11 @@ export function setFilterMenuAndCacheTagsViewRoutes() {
 </script>
 ```
 
-### 指令方式
+### 2. 指令方式
 
-> 指令位置：`/@/utils/authDirective.ts`，您可能需要了解 [自定义指令 directive](https://v3.cn.vuejs.org/guide/custom-directive.html)
+指令位置：[/@/utils/authDirective.ts](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/directive)，您可能需要了解 [自定义指令 directive](https://v3.cn.vuejs.org/guide/custom-directive.html)
 
-<p style="font-weight: bold;">一、单个权限验证（v-auth="xxx"）</p>
+#### 单个权限验证（v-auth="xxx"）
 
 ```html
 <div v-auth="'btn.add'">
@@ -253,7 +253,7 @@ export function setFilterMenuAndCacheTagsViewRoutes() {
 </div>
 ```
 
-<p style="font-weight: bold;">二、多个权限验证，满足一个则显示（v-auths="[xxx,xxx]"）</p>
+#### 多个权限验证，满足一个则显示（v-auths="[xxx,xxx]"）
 
 ```html
 <div v-auths="['btn.addsss', 'btn.edit', 'btn.delsss', 'btn.linksss']">
@@ -265,7 +265,7 @@ export function setFilterMenuAndCacheTagsViewRoutes() {
 </div>
 ```
 
-<p style="font-weight: bold;">三、多个权限验证，全部满足则显示（v-auth-all="[xxx,xxx]"）</p>
+#### 多个权限验证，全部满足则显示（v-auth-all="[xxx,xxx]"）
 
 ```html
 <div v-auth-all="['btn.add', 'btn.edit', 'btn.del', 'btn.link']">
@@ -277,9 +277,9 @@ export function setFilterMenuAndCacheTagsViewRoutes() {
 </div>
 ```
 
-### 函数方式
+### 3. 函数方式
 
-> 方法位置：`/@/utils/authFunction.ts`，用于方法中的判断，使用方法如下
+方法位置：[/@/utils/authFunction.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/authFunction.ts)，用于方法中的判断，使用方法如下
 
 ```ts
 <script lang="ts" setup>

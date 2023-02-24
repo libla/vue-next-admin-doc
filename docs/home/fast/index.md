@@ -54,7 +54,7 @@ export default viteConfig;
 
 ## 安装 typescript
 
-<p style="font-weight: bold;"> 一、安装</p>
+### 1. 安装
 
 ```bash
 # 安装
@@ -64,7 +64,7 @@ cnpm install typescript --save-dev
 npx tsc --init
 ```
 
-<p style="font-weight: bold;">二、改成 `.ts` 后缀</p>
+### 2. 改成 `.ts` 后缀
 
 将 `main.js` 修改为 `main.ts`，同时将 `index.html` 里面的引用也修改为 `main.ts`，然后在 `script` 里添加 `lang="ts"`
 
@@ -105,7 +105,7 @@ npx tsc --init
 </script>
 ```
 
-<p style="font-weight: bold;">三、出现问题：找不到模块 `./App.vue` 或其相应的类型声明</p>
+### 3. 出现问题：找不到模块 `./App.vue` 或其相应的类型声明
 
 打开 main.ts 会发现 `import App from App.vue` 会报错: 找不到模块 `./App.vue` 或其相应的类型声明，这是因为现在 ts 还没有识别 vue 文件，需要进行下面的配置：
 
@@ -119,7 +119,7 @@ declare module "*.vue" {
 }
 ```
 
-<p style="font-weight: bold;">四、出现问题：安装了 `Vetur` 的话，出现 `[vue/no-multiple-template-root]The template root requires exactly one element.eslint-plugin-vue` 的警告</p>
+### 4. 出现问题：安装了 `Vetur` 的话，出现 `[vue/no-multiple-template-root]The template root requires exactly one element.eslint-plugin-vue` 的警告
 
 处理方法：关闭了 `Vetur`，Vetur 认为这是 Vue 2 项目，因为它位于 VS Code 工作区中。
 
@@ -137,13 +137,13 @@ declare module "*.vue" {
 
 `element-plus` 官网：[https://element-plus.gitee.io/#/zh-CN](https://element-plus.gitee.io/#/zh-CN)
 
-<p style="font-weight: bold;">一、npm 安装</p>
+### 1. npm 安装
 
 ```bash
 npm install element-plus --save
 ```
 
-<p style="font-weight: bold;">二、CDN 链接引入</p>
+### 2. CDN 链接引入
 
 ```html
 <!-- 引入样式 -->
@@ -155,7 +155,7 @@ npm install element-plus --save
 <script src="https://unpkg.com/element-plus/lib/index.full.js"></script>
 ```
 
-<p style="font-weight: bold;">三、引入 Element Plus</p>
+### 3. 引入 Element Plus
 
 ```ts
 import { createApp } from "vue";
@@ -184,7 +184,7 @@ cnpm install sass sass-loader --save-dev
 
 Element Plus 的 theme-chalk 使用 SCSS 编写，如果你的项目也使用了 SCSS，那么可以直接在项目中改变 Element Plus 的样式变量。新建一个样式文件，例如 `element-variables.scss`，写入以下内容：
 
-<p style="font-weight: bold;">一、element-variables.scss</p>
+### 1. element-variables.scss
 
 `404问题`：[在 vite 当中使用主题，字体路径的 ~ 无法正常解析，build 和 dev 均报错](https://github.com/element-plus/element-plus/issues/958)临时处理：把字体文件复制到 src 下了，用相对路径引入。
 
@@ -237,7 +237,7 @@ document.documentElement.style.setProperty("--main-bg-color", "blue");
 document.body.style.removeProperty("--main-bg-color");
 ```
 
-<p style="font-weight: bold;">二、配置目录别名 `@`，方便引用</p>
+### 2. 配置目录别名 `@`，方便引用
 
 在 `vite.config.ts` 中，根据需求自己定义。注意写法 `/@assets/`，键必须以 `/` 斜线开始和结束：
 
@@ -261,7 +261,7 @@ const viteConfig: UserConfig = {
 export default viteConfig;
 ```
 
-<p style="font-weight: bold;">三、页面中使用</p>
+### 3. 页面中使用
 
 注意 `/@` 写法，一定要以 `/` 开头，否则报 `404`
 
@@ -276,7 +276,7 @@ import "/@/style/index.css";
 createApp(App).use(ElementPlus).mount("#app");
 ```
 
-<p style="font-weight: bold;">四、动态换肤功能</p>
+### 4. 动态换肤功能
 
 使用 `ColorPicker 颜色选择器`：[https://element-plus.gitee.io/#/zh-CN/component/color-picker](https://element-plus.gitee.io/#/zh-CN/component/color-picker)，实现动态换肤功能
 
@@ -286,7 +286,7 @@ createApp(App).use(ElementPlus).mount("#app");
 
 ## 安装 vue-router-next
 
-<p style="font-weight: bold;">一、cmd 安装</p>
+### 1. cmd 安装
 
 - [vue-router-next 代码仓库（github）](https://github.com/vuejs/vue-router-next)
 - [vue-router-next 文档地址](https://next.router.vuejs.org/)
@@ -295,9 +295,9 @@ createApp(App).use(ElementPlus).mount("#app");
 cnpm install vue-router@4 --save
 ```
 
-<p style="font-weight: bold;">二、页面中使用</p>
+### 2. 页面中使用
 
-> 2.1、页面下新增文件夹 `src/router/index.ts`
+- 页面下新增文件夹 `src/router/index.ts`
 
 `index.ts` 中写入：
 
@@ -346,7 +346,7 @@ const router = createRouter({
 export default router;
 ```
 
-> 2.2、`main.ts` 中引入 `src/router/index.ts`
+- `main.ts` 中引入 `src/router/index.ts`
 
 ```ts
 import { createApp } from "vue";
@@ -361,7 +361,7 @@ import { locale } from "element-plus";
 createApp(App).use(router).use(ElementPlus, { locale }).mount("#app");
 ```
 
-> 2.3、页面测试：地址栏输入 2.1 中的路由地址 `http://localhost:8080/#/login`，出现 `login` 中的文字就证明配置成功了。
+- 页面测试：地址栏输入路由地址 `http://localhost:8080/#/login`，出现 `login` 中的文字就证明配置成功了。
 
 ::: tip 提示
 地址栏带 `#号` 与不带 `#号` ，参考：[next.router history-mode.html](https://next.router.vuejs.org/guide/essentials/history-mode.html)

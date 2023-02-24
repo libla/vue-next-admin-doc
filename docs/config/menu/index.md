@@ -3,15 +3,19 @@
 ::: tip 温馨提示
 先不着急上手，首先得了解各参数字段是啥意思，菜单路径地址：[/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts)。也可看对应的 [next.router API 参考文档](https://next.router.vuejs.org/zh/api/#beforeenter) ❤️。
 
-- 前端控制：`/@/router/route.ts` 修改菜单数据
+- 前端控制：[/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 修改菜单数据
 
-- 后端控制：需先去 `/@/store/modules/themeConfig.ts` 下开启 `isRequestRoutes: true`，然后去 `/@/api/menu/index.ts` 中修改接口拿菜单数据
+- 后端控制：需先去 [/src/stores/themeConfig.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/stores/themeConfig.ts#L133) 下开启 `isRequestRoutes: true`，然后去 [/@/api/menu/index.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/api/menu/index.ts) 中修改接口拿菜单数据
 
 :::
 
-> 以下内容为国际化，想了解更多，请移步 [高级-国际化](/config/i18n/)
+以下内容为国际化，想了解更多，请移步 [高级-国际化](/config/i18n/)
 
 ## 参数说明
+
+代码位置：[/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts)
+
+菜单路由中的字段说明
 
 ```ts
 {
@@ -51,7 +55,7 @@
 
 ## 菜单格式
 
-> 在项目 `/@/router/route.ts` 文件中。这里需要注意，菜单数据内容必须嵌套进顶级节点（作为顶级路由出口）的 `children` 字段里
+在项目 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件中。这里需要注意，菜单数据内容必须嵌套进顶级节点（作为顶级路由出口）的 `children` 字段里
 
 ```ts
 {
@@ -80,7 +84,11 @@
 
 ## 路径格式
 
-> 1.1、在项目 `/@/router/route.ts` 文件中，观察 `path` 字段，有 `children` 时，`path` 字段是基于上一级继续拼接（为什么这样？详看 [布局配置-breadcrumb-面包屑](/config/layoutConfig/#breadcrumb-面包屑)），如下所示：`/params/xxx`，这样做是为了 `breadcrumb-面包屑` 的显示问题。
+### 1. 面包屑多级显示
+
+在项目 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件中，观察 `path` 字段，有 `children` 时，`path` 字段是基于上一级继续拼接（为什么这样？详看 [布局配置-breadcrumb-面包屑](/config/layoutConfig/#breadcrumb-面包屑)）。
+
+如下所示：`/params/xxx`，这样做是为了 `breadcrumb-面包屑` 的显示问题。
 
 ```ts
 {
@@ -102,9 +110,11 @@
 }
 ```
 
-> 1.2、如果这样写：
+### 2. 面包屑单级显示
 
-```ts
+`children` 里的 `path` 不基于上级 `path`，注意高亮部分代码的 `path`
+
+```ts {18}
 {
   path: '/params',
   redirect: '/params/common',
@@ -131,15 +141,15 @@
 
 ## 一级菜单
 
-<p style="font-weight: bold;">一、新建文件夹</p>
+### 1. 新建文件夹
 
-> 1.1、一般情况下，我们添加菜单时，代码都是在编译中（cnpm run dev）。所以我们先新增文件夹，后再添加代码到 `/@/router/route.ts` 文件中，防止需要重新再运行项目。`/@/views` 下新增 `personal` 文件夹
+- 一般情况下，我们添加菜单时，代码都是在编译中（cnpm run dev）。所以我们先新增文件夹，后再添加代码到 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件中，防止需要重新再运行项目。`/@/views` 下新增 `personal` 文件夹
 
 <img src="https://img-blog.csdnimg.cn/3ba519fd2d0e47a2ab10c6a7f2f03d67.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
-> 1.2、index.vue，注意 `name` 值需与 `/@/router/route.ts` 中的 `name` 值一致，否则实现不了路由的缓存（keep-alive）
+- index.vue，注意 `name` 值需与 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 中的 `name` 值一致，否则实现不了路由的缓存（keep-alive）
 
-```ts {11}
+```html
 <template>
   <div class="personal">
     personal
@@ -147,26 +157,20 @@
   </div>
 </template>
 
-<script lang="ts">
-import { reactive, toRefs, defineComponent } from 'vue';
-export default defineComponent({
-  name: 'personal',
-  setup() {
-    const state = reactive({});
-    return {
-      ...toRefs(state),
-    };
-  },
-});
+<script setup lang="ts" name="personal">
+import { reactive, toRefs } from 'vue';
+
+// 定义变量内容
+const state = reactive({});
 
 <style scoped lang="scss">
 .personal {}
 </style>
 ```
 
-<p style="font-weight: bold;">二、新增代码</p>
+### 2. 新增路由代码
 
-> 在项目 `/@/router/route.ts` 文件中，比如我们上面添加个人中心界面，新增如下代码：
+在项目 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件中，需写在 `children` 字段里，比如我们上面添加个人中心界面，新增如下代码：
 
 ```ts {11-25}
 {
@@ -198,9 +202,9 @@ export default defineComponent({
 }
 ```
 
-<p style="font-weight: bold;">三、界面显示</p>
+### 3. 界面显示效果
 
-> 去 `http://localhost:8888/` 中查看显示效果，如下：
+去 `http://localhost:8888/` 中查看显示效果，如下：
 
 <img src="https://img-blog.csdnimg.cn/01cccea40e51431f9ac16af6ec6b0fbd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
@@ -214,15 +218,15 @@ export default defineComponent({
 
 :::
 
-<p style="font-weight: bold;">一、新建文件夹</p>
+### 1. 新建文件夹（同一级菜单）
 
-> 1.1、我们按照建 `一级菜单` 的步骤建 `二级菜单`。`/@/views` 下新增 `system` 文件夹。`system` 文件夹下新增 `menu、user` 等文件夹
+- 我们按照建 `一级菜单` 的步骤建 `二级菜单`。`/@/views` 下新增 `system` 文件夹。`system` 文件夹下新增 `menu、user` 等文件夹
 
 <img src="https://img-blog.csdnimg.cn/db3d9ea349a146faa5ba857e35f9ca51.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
-> 1.2、为了方便管理，我们在 `/@/views/system/menu` 或 `/@/views/system/user` 中都添加 `index.vue` 组件
+- 为了方便管理，我们在 `/@/views/system/menu` 或 `/@/views/system/user` 中都添加 `index.vue` 组件
 
-```ts {11}
+```html
 <template>
   <div class="system-menu-container">
     systemMenu
@@ -230,26 +234,22 @@ export default defineComponent({
   </div>
 </template>
 
-<script lang="ts">
-import { reactive, toRefs, defineComponent } from 'vue';
-export default defineComponent({
-  name: 'systemMenu',
-  setup() {
-    const state = reactive({});
-    return {
-      ...toRefs(state),
-    };
-  },
-});
+<script setup lang="ts" name="systemMenu">
+import { reactive } from 'vue';
+
+// 定义变量内容
+const state = reactive({});
 
 <style scoped lang="scss">
 .system-menu-container {}
 </style>
 ```
 
-<p style="font-weight: bold;">二、新增代码</p>
+### 2. 新增路由代码（同一级菜单）
 
-> 在项目 `/@/router/route.ts` 文件中，比如我们上面添加系统设置界面，新增如下代码：代码有点长，可复制粘贴代码到 [OSCHINA 在线代码格式化](https://tool.oschina.net/codeformat/json/) 中具体查看
+在项目 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件中，比如我们上面添加系统设置界面，
+
+新增如下代码：代码有点长，可复制粘贴代码到 [OSCHINA 在线代码格式化](https://tool.oschina.net/codeformat/json/) 中具体查看
 
 ```ts {15-18}
 {
@@ -316,13 +316,13 @@ export default defineComponent({
 }
 ```
 
-<p style="font-weight: bold;">三、界面显示</p>
+### 3. 界面显示效果（同一级菜单）
 
-> 去 `http://localhost:8888/` 中查看显示效果，如下：
+去 `http://localhost:8888/` 中查看显示效果，如下：
 
 <img src="https://img-blog.csdnimg.cn/70f38da5ef8b4836b54414f9fb96b028.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
-## 多级嵌套菜单
+## 多级嵌套菜单写法
 
 ::: tip 多级嵌套菜单与二级菜单的区别：（只要子级里有 `children`）
 
@@ -332,17 +332,21 @@ export default defineComponent({
 
 :::
 
-<p style="font-weight: bold;">一、新建文件夹</p>
+### 1. 新建文件夹（同二级菜单）
 
-> 1.1、我们按照建 `二级菜单` 的步骤建 `多级嵌套菜单`。`/@/views` 下新增 `menu` 文件夹。`menu` 文件夹下新增 `menu1` 等文件夹，`menu1` 文件夹下新增 `menu12` 等。参考 [route.ts menu 的嵌套格式](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts)
+参考 [route.ts menu 的嵌套格式](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts#L80)
+
+- 我们按照建 `二级菜单` 的步骤建 `多级嵌套菜单`。`/@/views` 下新增 `menu` 文件夹。`menu` 文件夹下新增 `menu1` 等文件夹，`menu1` 文件夹下新增 `menu12` 等。
 
 <img src="https://img-blog.csdnimg.cn/be2073d1e4d84505b1e6ff88140a3403.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
-> 1.2、组件代码参考 [/config/menu/#二级菜单 1.2](/config/menu/#二级菜单)
+- 组件代码参考 [/config/menu/#二级菜单](/config/menu/#二级菜单)
 
-<p style="font-weight: bold;">二、新增代码</p>
+### 2. 新增路由代码（同二级菜单）
 
-> 在项目 `/@/router/route.ts` 文件中，比如我们上面添加系统设置界面，新增如下代码：代码有点长，可复制粘贴代码到 [OSCHINA 在线代码格式化](https://tool.oschina.net/codeformat/json/) 中具体查看
+在项目 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件中，比如我们上面添加系统设置界面，
+
+新增如下代码：代码有点长，可复制粘贴代码到 [OSCHINA 在线代码格式化](https://tool.oschina.net/codeformat/json/) 中具体查看
 
 ```ts {4-5,21-22,37-39}
 {
@@ -416,17 +420,21 @@ export default defineComponent({
 }
 ```
 
-<p style="font-weight: bold;">三、界面显示</p>
+### 3. 界面显示效果（同二级菜单）
 
-> 去 `http://localhost:8888/` 中查看显示效果，如下：
+去 `http://localhost:8888/` 中查看显示效果，如下：
 
 <img src="https://img-blog.csdnimg.cn/94bc62c040884cdab2b0554f5be6ce1b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
 ## 后端接口菜单
 
-<p style="font-weight: bold;">一、菜单格式</p>
+### 1. 菜单格式
 
-> 1.1、前面我们已经说了，[菜单格式](/config/menu/#菜单格式)，菜单数据内容必须嵌套进顶级节点的 `children` 字段里，所以我们后端返回的菜单格式，只需要返回顶级节点 `children` 数组即可。可以参考 gitee 上模拟的 [菜单数据格式](https://gitee.com/lyt-top/vue-next-admin-images/blob/master/menu/adminMenu.json)
+::: tip 参考 gitee 模拟数据
+[菜单数据格式：https://gitee.com/lyt-top/vue-next-admin-images/blob/master/menu/adminMenu.json](https://gitee.com/lyt-top/vue-next-admin-images/blob/master/menu/adminMenu.json)
+:::
+
+- 前面我们已经说了，[菜单格式](/config/menu/#菜单格式)，菜单数据内容必须嵌套进顶级节点的 `children` 字段里，所以我们后端返回的菜单格式，只需要返回顶级节点 `children` 数组即可。
 
 ```json {8,9}
 {
@@ -456,13 +464,13 @@ export default defineComponent({
 }
 ```
 
-> 1.2、需要注意 `component` 字段为字符串而非函数，上面高亮位置处。这里为什么不写成 `"component": "/home/index.vue"`，请继续往下看 `二、逻辑处理`
+- 需要注意 `component` 字段为字符串而非函数，上面高亮位置处。这里为什么不写成 `"component": "/home/index.vue"`，请继续往下看 `二、逻辑处理`
 
 ```json
 "component": "home/index",
 ```
 
-> 1.3、`component` 例子演示，如嵌套菜单（文档已简写，真实请补满其它参数）：
+- `component` 例子演示，如嵌套菜单（文档已简写，真实请补满其它参数）：
 
 ::: tip 对比发现
 
@@ -472,7 +480,7 @@ export default defineComponent({
 
 :::
 
-```ts {4,9,15,26,31,37}
+```ts {4,9,15,26,31,36}
 // 默认菜单格式
 {
   path: '/menu',
@@ -516,16 +524,18 @@ export default defineComponent({
 }
 ```
 
-<p style="font-weight: bold;">二、逻辑处理</p>
+### 2. 逻辑处理
 
-> 1.1、Glob 导入，Vite 支持使用特殊的 import.meta.glob 函数从文件系统导入多个模块。具体查看 [vite Glob 导入文档](https://vitejs.cn/guide/features.html#glob-import)。后端控制逻辑代码 [/@/router/backEnd.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/backEnd.ts)
+后端控制逻辑代码 [/@/router/backEnd.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/backEnd.ts)
+
+- Glob 导入，Vite 支持使用特殊的 import.meta.glob 函数从文件系统导入多个模块。具体查看 [vite Glob 导入文档](https://vitejs.cn/guide/features.html#glob-import)。
 
 ```ts
 const layouModules: any = import.meta.glob("../layout/routerView/*.{vue,tsx}");
 const viewsModules: any = import.meta.glob("../views/**/*.{vue,tsx}");
 ```
 
-> 1.2、把 component 中的路径字符串转成实际组件地址，通过以下方法进行转换
+- 把 component 中的路径字符串转成实际组件地址，通过以下方法进行转换
 
 ```ts
 /**
@@ -571,11 +581,42 @@ export function dynamicImport(
 }
 ```
 
-> 1.3、转换完成再重新赋值给 [菜单格式](/config/menu/#菜单格式)，`children` 字段里
+- 转换完成再重新赋值给 [菜单格式](/config/menu/#菜单格式)，`children` 字段里
 
 ```ts
 // res.data 为链接
 // https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/backEnd.ts
 // 的菜单模拟数据
 const dynamicRoutes = await backEndComponent(res.data);
+```
+
+## 路由缓存
+
+路由菜单中的 `name` 需与组件的 `name` 相同且 `唯一`，还有 `meta.isKeepAlive` 设为 `true`
+
+### 1. 路由菜单设置 `name` 值
+
+```ts{3}
+{
+  path: '/home',
+  name: 'home',
+}
+```
+
+### 2. 组件中设置 `name` 值
+
+```html{1}
+<script setup lang="ts" name="home">
+  // 这里写点内容，防止空内容报错
+</script>
+```
+
+### 3. `meta.isKeepAlive`
+
+代码路径：[/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts)
+
+```ts{2}
+ meta: {
+    isKeepAlive: true,
+  },
 ```

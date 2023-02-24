@@ -12,11 +12,11 @@
 
 ## vsCode 插件安装
 
-> 2.1、点击左侧图标
+### 1. 点击左侧图标
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/202103142212293.png)
 
-> 2.2、复制粘贴以下插件进行安装（可批量搜索，空格隔开）
+### 2. 复制粘贴以下插件进行安装（可批量搜索，空格隔开）
 
 - Vue Language Features (Volar)
 - Auto Close Tag
@@ -51,7 +51,7 @@
 - vscode-fileheader
 - vscode-icons
 
-> 2.3、打开 vsCode 用户自定义配置
+### 3. 打开 vsCode 用户自定义配置
 
 - Ctrl + shift + p，
 - 搜 setting，
@@ -135,15 +135,15 @@
 
 ## eslint 第一次可能出现以下问题
 
-> 3.1、点击 `allow everywhere` 或者 `allow`
+### 1. 点击 `allow everywhere` 或者 `allow`
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210314235038442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDUwNzQx,size_16,color_FFFFFF,t_70)
 
-> 3.2、出现 `!感叹号`，点击如下图片位置
+### 2. 出现 `!感叹号`，点击如下图片位置
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210314235243151.png)
 
-> 3.3、出现其它弹窗，直接点击 `关闭按钮`
+### 3. 出现其它弹窗，直接点击 `关闭按钮`
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210315104826364.png)
 
@@ -153,9 +153,11 @@
 
 ## 代码智能提示双提示问题
 
+如下图所示， `locals` 出现了双提示：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4144c48d59c74b9eb312ddfb47ff9263.png)
 
-卸载 `Vetur` 插件 + 删除 vs code 配置代码
+### 1. 卸载 `Vetur` 插件 + 删除 vs code 配置代码
 
 ```json
 "vetur.format.defaultFormatter.html": "prettyhtml",
@@ -167,6 +169,6 @@
 "vetur.validation.script": false,
 ```
 
-或者禁用工作区，`shift + ctrl + x` 找到 `Vetur` 插件
+### 2. 或者禁用工作区，`shift + ctrl + x` 找到 `Vetur` 插件
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/a9dc3bd472e14712852fa8d4e85b7f3f.png)

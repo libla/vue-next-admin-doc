@@ -1,1 +1,0 @@
-import{_ as e,c as r,o as t,a}from"./app.83bee338.js";const d=JSON.parse('{"title":"适用人群","description":"","frontmatter":{},"headers":[],"relativePath":"home/forPeople/index.md"}'),l={name:"home/forPeople/index.md"},n=a("",4),o=[n];function s(i,c,p,h,_,f){return t(),r("div",null,o)}const m=e(l,[["render",s]]);export{d as __pageData,m as default};

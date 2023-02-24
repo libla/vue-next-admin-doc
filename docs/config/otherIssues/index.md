@@ -2,7 +2,7 @@
 
 ## 更新(升级) vite 2.0 后遇到的问题
 
-### vite 1.x
+### 1. vite 1.x
 
 ```ts
 import type { UserConfig } from "vite";
@@ -37,9 +37,9 @@ const viteConfig: UserConfig = {
 export default viteConfig;
 ```
 
-### vite 2.x
+### 2. vite 2.x
 
-> alias、server、build
+alias、server、build
 
 :::tip 提示
 需要安装 @vitejs/plugin-vue，否则 `.vue` 文件报错。安装命令：`cnpm install @vitejs/plugin-vue --save-dev`
@@ -81,12 +81,13 @@ export default viteConfig;
 
 ## 页面打开时空白问题
 
-> 检查浏览器、node 版本：`升级浏览器、node 版本` 或 `重新安装依赖`
+### 1. 检查浏览器、node 版本：`升级浏览器、node 版本` 或 `重新安装依赖`
 
-### 升级浏览器、node 版本
+### 2. 升级浏览器、node 版本
 
-- 谷歌浏览器版本 `版本 72.0.3626.121` 或者 `版本 < 72.x`，页面将出现报错 `Uncaught SyntaxError: Unexpected token.` ，这是因为老版本浏览器不支持最新语法 `xx?.xx?.xx`。
-- node 版本需要 `大于 12xx.xx.x`，[node 官网](https://nodejs.org/zh-cn/)
+谷歌浏览器版本 `版本 72.0.3626.121` 或者 `版本 < 72.x`，页面将出现报错 `Uncaught SyntaxError: Unexpected token.` ，这是因为老版本浏览器不支持最新语法 `xx?.xx?.xx`。
+
+node 版本需要 `大于 12xx.xx.x`，[node 官网](https://nodejs.org/zh-cn/)
 
 ```bash
 # cmd 输入 node -v
@@ -96,18 +97,20 @@ node -v
 v14.16.0
 ```
 
-### 重新安装依赖
+### 3. 重新安装依赖
 
-<p style="font-weight: bold;">一、先删除项目中的 node_modules </p>
+<p></p>
 
-> 建议使用 cnpm，因为 yarn 有时会报错。[node 版本 > 12xx.xx.x](https://nodejs.org/zh-cn/)
+#### 先删除项目中的 node_modules
 
-<p style="font-weight: bold;">二、使用 cnpm 获取 yarn 代替 npm，（桌面 cmd 运行）</p>
+- 建议使用 cnpm，因为 yarn 有时会报错。[node 版本 > 12xx.xx.x](https://nodejs.org/zh-cn/)
+
+#### 使用 cnpm 获取 yarn 代替 npm，（桌面 cmd 运行）
 
 - 安装 cnpm：`npm install -g cnpm --registry=https://registry.npm.taobao.org`
 - 安装 yarn：`npm install -g yarn`
 
-<p style="font-weight: bold;">三、vue-next-admin 项目根目录</p>
+#### vue-next-admin 项目根目录
 
 ```bash
 # 使用 cnpm install 或 cnpm i 安装依赖
@@ -119,7 +122,7 @@ yarn install
 
 ## 本地调试接口跨域问题
 
-> No 'Access-Control-Allow-Origin' header is present on the requested resource.
+No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 &emsp;&emsp;Access to image at `'https://image.zhangxinxu:9000/#/study/image/blog/201310/2013-10-10203238.png'` from origin `'http://localhost:8888'` has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
@@ -132,12 +135,16 @@ yarn install
 
 ## 安装的依赖与 package.json 中的不一致
 
+### 1. 依赖说明
+
 ::: tip
 
 - '~'（波浪符号）:他会更新到当前 minor version（也就是中间的那位数字）中最新的版本。放到我们的例子中就是："element-plus": "~1.2.0-beta.4"，这个库会去匹配更新到 1.2.x 的最新版本，如果出了一个新的版本为 1.3.0，则不会自动升级。波浪符号是曾经 npm 安装时候的默认符号，现在已经变为了插入符号。
 
 - '^'（插入符号）: 这个符号就显得非常的灵活了，他将会把当前库的版本更新到当前 major version（也就是第一位数字）中最新的版本。放到我们的例子中就是："element-plus": "^1.2.0-beta.4", 这个库会去匹配 1.x.x 中最新的版本，但是他不会自动更新到 2.0.0。
   :::
+
+### 2. 去掉 `^`，锁版本
 
 打开根目录 `package.json`，去掉 `^`，如下：
 
@@ -155,9 +162,9 @@ yarn install
 
 ## cnpm run dev 无法运行项目
 
-<p style="font-weight: bold;">一、错误消息，以 vitepress 为例</p>
+### 1. 错误消息，以 vitepress 为例
 
-> 1.1、此错误为 node 版本过低，因为使用的是 `v13.6.0` 的 node 版本
+此错误为 `node 版本过低`，因为使用的是 `v13.6.0` 的 node 版本
 
 ```bash
 failed to start server. error:
@@ -185,9 +192,9 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     C:\Users\issuser\AppData\Roaming\npm-cache\_logs\2021-12-07T02_06_33_435Z-debug.log
 ```
 
-<p style="font-weight: bold;">二、 查看 node 版本，进行版本升级</p>
+### 2. 查看 node 版本，进行版本升级
 
-> 2.1、node 各版本下载地址：[https://npmmirror.com/mirrors/node/](https://npmmirror.com/mirrors/node/)。`.msi` 后缀的为有安装界面应用。
+node 各版本下载地址：[https://npmmirror.com/mirrors/node/](https://npmmirror.com/mirrors/node/)。`.msi` 后缀的为有安装界面应用。
 
 ```bash
 # win + r，cmd 中输入
@@ -198,6 +205,8 @@ npm ERR!     C:\Users\issuser\AppData\Roaming\npm-cache\_logs\2021-12-07T02_06_3
 ## 批量更新 package.json
 
 当新建一个项目的时候，有时候会从其他项目的 `package.json` 里面 copy 一份 `dependencies` 过来，或者在 `github` 上下载项目作为改动时，但因为是新项目，我们想用各个依赖包的最新版本。如果手动去修改 `dependencies` 中各个包的版本号，那就太麻烦了，借助 `npm-check-updates` 工具可以很方便的将 `package.json` 中的依赖包版本号更新为最新版本。
+
+### 1. npm-check-updates 安装
 
 ::: tip 提示
 以下命令都是在 cmd 中执行：
@@ -216,7 +225,9 @@ ncu
 ncu -u
 ```
 
-> 更新全部 dependencies 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -> ^4.3.0)
+### 2. 更新全部依赖
+
+dependencies 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -> ^4.3.0)
 
 ```bash
 # 更新全部 dependencies 到最新版本
@@ -225,26 +236,26 @@ ncu -a
 
 ## dependencies 和 devDependencies
 
-> 根目录 `package.json` 中：
+根目录 `package.json` 中：
 
-npm 安装依赖 `dependencies` 和 `devDependencies` 的区别：
+### 1. npm 安装依赖 `dependencies` 和 `devDependencies` 的区别
 
 - `dependencies`：是需要发布到生产环境的
 - `devDependencies`：里面的插件只用于开发环境，不用于生产环境
 
-npm 安装方式：
+### 2. npm 安装方式
 
 - `dependencies`：npm install 依赖名称 --save
 - `devDependencies`：npm install 依赖名称 --save-dev
 
-其它说明：
+### 3. 其它说明
 
 - `dependencies`：插件不管你引不引入都会打包到文件中去
 - `devDependencies`：若文件中 import 引入 devDependencies 中插件，依然会把当前引入的插件打包到文件中，不引入则不打包
 
 ## 项目编译慢
 
-> cnpm run dev 编译慢，根目录 `package.json`，尝试删除 `--force`
+`cnpm run dev` 编译慢，根目录 `package.json`，尝试删除 `--force`
 
 ```json
 "scripts": {
@@ -254,9 +265,9 @@ npm 安装方式：
 
 ## 哪些文件可以删除
 
-<p style="font-weight: bold;">一、百度统计</p>
+### 1. 百度统计
 
-> 根目录 `index.html`
+根目录 `index.html`
 
 ```html
 <script type="text/javascript">
@@ -270,9 +281,9 @@ npm 安装方式：
 </script>
 ```
 
-<p style="font-weight: bold;">二、百度地图 key</p>
+### 2. 百度地图 key
 
-> 根目录 `index.html`
+根目录 `index.html`
 
 ```html
 <script
@@ -281,17 +292,21 @@ npm 安装方式：
 ></script>
 ```
 
-<p style="font-weight: bold;">三、演示界面</p>
+### 3. 演示界面
 
-> `/@/views/fun` 与 `/@/views/pages`，需要删除对应的依赖
+[/@/views/fun](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/views/fun) 与 [/@/views/pages](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/views/pages)，需要删除对应的依赖
 
-<p style="font-weight: bold;">四、其它</p>
+[/src/layout](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout)，结构说明请查看：[简介 -> 目录结构图](/config/)
 
-> 根据具体情况进行对应的删除修改
+### 4. 其它
+
+根据具体情况进行对应的删除修改
 
 ## 如何跟随 master 升级项目
 
-> 1.1、[发行版](https://gitee.com/lyt-top/vue-next-admin/releases)，进行下载覆盖（前提是未修改布局等，否则自己修改的将被覆盖，谨慎操作）。
+### 1. 发行版
+
+[发行版](https://gitee.com/lyt-top/vue-next-admin/releases)，进行下载覆盖（前提是未修改布局等，否则自己修改的将被覆盖，谨慎操作）。
 
 ```ts
 // 下载
@@ -300,7 +315,9 @@ vue-next-admin-v1.1.2.zip
 下载 Source code (tar.gz)
 ```
 
-> 1.2、[提交日志](https://gitee.com/lyt-top/vue-next-admin/commits/master)，进行一个一个对比修改（貌似也没有其它好的办法）。
+### 2. 提交日志
+
+[提交日志](https://gitee.com/lyt-top/vue-next-admin/commits/master)，进行一个一个对比修改（貌似也没有其它好的办法）。
 
 ## illustrations svg 图标库
 
@@ -312,59 +329,56 @@ vue-next-admin-v1.1.2.zip
 
 ## 事件总线 mitt
 
-> 相关文档地址：[mitt](https://github.com/developit/mitt)
+相关文档地址：[mitt](https://github.com/developit/mitt)
 
-<p style="font-weight: bold;">一、发送</p>
+代码地址：[/@/utils/mitt](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/mitt.ts)
 
-```ts
-<script lang="ts">
-  setup() {
-    const { proxy } = getCurrentInstance() as any;
+### 1. 发送（发布）
 
-    // 方法名 + 参数
-    proxy.mittBus.emit('layoutMobileResize', {
-      layout: 'defaults',
-      clientWidth,
-    });
-  }
+```html
+<script setup lang="ts">
+  import mittBus from "/@/utils/mitt";
+
+  // 方法名 + 参数
+  mittBus.emit("layoutMobileResize", {
+    layout: "defaults",
+    clientWidth,
+  });
 </script>
 ```
 
-<p style="font-weight: bold;">二、监听</p>
+### 2. 监听（订阅）
 
-```ts
-<script lang="ts">
-  setup() {
-    const { proxy } = getCurrentInstance() as any;
+```html
+<script setup lang="ts">
+  import mittBus from "/@/utils/mitt";
 
-    // 回调参数
-    proxy.mittBus.on('layoutMobileResize', (res: any) => {
-      // 逻辑处理
-    });
-  }
+  // 回调参数
+  mittBus.on("layoutMobileResize", (res: any) => {
+    // 逻辑处理
+  });
 </script>
 ```
 
-<p style="font-weight: bold;">三、销毁</p>
+### 3. 销毁
 
-```ts
-<script lang="ts">
-  setup() {
-    const { proxy } = getCurrentInstance() as any;
+```html
+<script setup lang="ts">
+  import { onUnmounted } from "vue";
+  import mittBus from "/@/utils/mitt";
 
-    onUnmounted(() => {
-      proxy.mittBus.off('layoutMobileResize');
-
-      // 或者
-      proxy.mittBus.off('layoutMobileResize', () => {});
-    });
-  }
+  // 页面销毁时
+  onUnmounted(() => {
+    mittBus.off("layoutMobileResize", () => {});
+  });
 </script>
 ```
 
-<p style="font-weight: bold;">四、依赖注入</p>
+### 4. 其它方式（依赖注入）
 
-新版使用 [依赖注入](https://cn.vuejs.org/guide/components/provide-inject.html) 替换 `getCurrentInstance`
+新版使用 `import mittBus from "/@/utils/mitt";` 替换 `getCurrentInstance`
+
+相关文档：[依赖注入](https://cn.vuejs.org/guide/components/provide-inject.html)
 
 ```ts
 const properties = {
@@ -412,7 +426,7 @@ for (const [key, value] of Object.entries(properties)) {
 - 需设置内置类：`layout-padding`、`layout-padding-auto`、`layout-padding-view`。
 - 样式在 [/src/theme/app.scss](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/theme/app.scss) 中。
 
-1、设置普通 div 高度自适应：
+### 1. 设置普通 div 高度自适应
 
 ```html
 <template>
@@ -427,7 +441,7 @@ for (const [key, value] of Object.entries(properties)) {
 </template>
 ```
 
-2、设置表格高度自适应：主要使用 flex 布局，`el-table` 需设置 `flex: 1;`。
+### 2. 设置表格高度自适应：主要使用 flex 布局，`el-table` 需设置 `flex: 1;`
 
 ```html
 <template>
@@ -456,17 +470,17 @@ for (const [key, value] of Object.entries(properties)) {
 
 ## master 分支装依赖时会出现的问题
 
-<p style="font-weight: bold;">一、screenFul 要求的node 版本大于14.x.1</p>
+### 1. screenFul 要求的 node 版本大于 14.x.1
 
-> 解决方法：[升级 node 版本](https://npmmirror.com/mirrors/node/)。`.msi` 后缀的为有安装界面应用。
+解决方法：[升级 node 版本](https://npmmirror.com/mirrors/node/)。`.msi` 后缀的为有安装界面应用。
 
-<p style="font-weight: bold;">二、开发依赖的types 库，已有自己的类型声明</p>
+### 2. 开发依赖的 types 库，已有自己的类型声明
 
-> 解决方法：根目录 `package.json` 下："@types/axios": "^0.14.0"，" @types/clipboard": "^2.0.1", 去掉这两个依赖
+解决方法：根目录 `package.json` 下："@types/axios": "^0.14.0"，" @types/clipboard": "^2.0.1", 去掉这两个依赖
 
-<p style="font-weight: bold;">三、会报 error Unexpected end of JSON input while parsing near '...n4m5KyE3UEIxfv0HEAVbz'  这种类型的错误</p>
+### 3. 会报 error Unexpected end of JSON input while parsing near '...n4m5KyE3UEIxfv0HEAVbz' 这种类型的错误
 
-> 解决方法：cmd 中执行以下命令
+解决方法：`cmd` 中执行以下命令
 
 ```bash
 npm cache clean --force
@@ -474,7 +488,7 @@ npm cache clean --force
 
 ## 本地开发，页面空白问题
 
-> 解决方法：删除 [layout/routerView/parent.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/routerView/parent.vue) `keep-alive`。如下：
+解决方法：删除 [layout/routerView/parent.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/routerView/parent.vue) `keep-alive`。如下：
 
 ```html
 <router-view v-slot="{ Component }">

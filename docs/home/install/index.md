@@ -6,12 +6,35 @@
 
 ## 安装 cnpm、yarn，win + R，复制以下代码
 
-- cnpm：`npm install -g cnpm --registry=https://registry.npm.taobao.org`
-- yarn：`npm install -g yarn`
+::: tip 建议 优先使用 cnpm
+使用 cnpm，因为 npm 有时候安装会报错（网络卡）
+:::
 
-> 建议使用 cnpm，因为 npm 有时候安装会报错（网络卡）
+`win + R` cmd 中粘贴下列命令：
+
+### 1. cnpm
+
+```sh
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+### 2. yarn
+
+```sh
+npm install -g yarn
+```
+
+### 3. pnpm
+
+参考文档：[https://pnpm.io/zh/installation](https://pnpm.io/zh/installation)
+
+仓库地址：[https://github.com/pnpm/pnpm](https://github.com/pnpm/pnpm)
 
 ## vue3.x：master 分支
+
+仓库地址：https://gitee.com/lyt-top/vue-next-admin/tree/master/
+
+桌面 `win + R`，输入 `cmd`，按步骤复制下列命令
 
 ```bash
 # 克隆项目
@@ -32,7 +55,11 @@ cnpm run build
 
 ## vue2.x：vue-prev-admin 分支
 
-> 切换分支前：记得删除 `node_modules`，因为各分支的依赖可能不同
+仓库地址：https://gitee.com/lyt-top/vue-next-admin/tree/vue-prev-admin/
+
+::: danger 切换分支前
+记得先删除 `node_modules`，因为各分支的依赖可能不同，防止出错。
+:::
 
 ```bash
 # 克隆项目
@@ -57,9 +84,11 @@ cnpm run build
 
 ## 仓库代码各分支说明（后续将添加更多分支）
 
-> git 命令参考文档：https://gitee.com/all-about-git
+::: tip git 命令参考
+文档：https://gitee.com/all-about-git
+:::
 
-> 项目切换分支后，README.md 文件内容都会不一样，请注意看 README.md 文件中的第一项 介绍 内容，会大概介绍当前分支是干啥的。`基础版同步 master 分支主版本`
+项目切换分支后，README.md 文件内容都会不一样，请注意看 README.md 文件中的第一项 介绍 内容，会大概介绍当前分支是干啥的。`基础版同步 master 分支主版本`
 
 ```ts
 ├── vueNextAdmin

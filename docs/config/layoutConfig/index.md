@@ -1,20 +1,33 @@
 # 布局配置
 
 ::: tip 布局不生效
-清空浏览器永久缓存或者点击 `布局配置-一键恢复默认`，前提是修改了 `/@/store/modules/themeConfig.ts` 配置文件内容。布局配置组件路径：`/@/layout/navBars/breadcrumb/setings.vue`。添加或者修改功能，请前往 `/@/layout/navBars/breadcrumb/setings.vue` 组件位置修改
+清空浏览器永久缓存或者点击 `布局配置 -> 一键恢复默认`，前提是修改了 [/src/stores/themeConfig.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/stores/themeConfig.ts) 配置文件内容。添加或者修改功能，请前往 [/@/layout/navBars/breadcrumb/setings.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/navBars/breadcrumb/setings.vue) 组件位置修改
 :::
 
-> 大图查看，鼠标右键：`在新标签页中打开图片`
+## 布局说明
+
+::: danger 操作方式
+
+可视化操作：左上角 `icon` 图标点击打开布局配置，所有配置功能都在这个里面
+
+代码操作：[/src/stores/themeConfig.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/stores/themeConfig.ts)
+:::
+
+包含：`菜单栏`、`顶栏`、`tagsView 标签页`、`主内容区`。
+
+大图查看，鼠标右键：`在新标签页中打开图片`。
 
 <img src="https://img-blog.csdnimg.cn/b7738eba9c534cffb9e6b648552fa591.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16">
 
 ## 全局主题
 
-### 目录结构
+### 1. 目录结构
 
-<p style="font-weight: bold;">一、`src/theme` 下，后期继续补充，样式都会写在这个文件夹下：</p>
+::: tip vue-prev-admin
+[vue-prev-admin](https://gitee.com/lyt-top/vue-next-admin/tree/vue-prev-admin/) vue2.x 的目录结构也会基于该结构进行修改
+:::
 
-> [vue-prev-admin](https://gitee.com/lyt-top/vue-next-admin/tree/vue-prev-admin/) vue2.x 的目录结构也会基于该结构进行修改
+[/src/theme](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/theme) 下，后期继续补充，样式都会写在这个文件夹下：
 
 ```ts
 ├── theme (页面样式)
@@ -54,11 +67,11 @@
 	└── waves.scss (按钮波浪样式)
 ```
 
-### scss 部分函数说明
+### 2. scss 部分函数说明
 
 <p style="font-weight: bold;">一、scss @mixin</p>
 
-> 1.1 定义：[scss 官方中文文档](https://www.sass.hk/docs/)，具体请查阅官方文档。使用方法：
+- 定义：[scss 官方中文文档](https://www.sass.hk/docs/)，具体请查阅官方文档。使用方法：
 
 ```scss
 /* Button 按钮
@@ -70,7 +83,7 @@
 }
 ```
 
-> 1.2 页面中使用，先引入，然后在 `css` 类中通过 `@include` 使用
+- 页面中使用，先引入，然后在 `css` 类中通过 `@include` 使用
 
 ```scss
 @import "mixins/element-mixins.scss";
@@ -84,7 +97,7 @@
 
 <p style="font-weight: bold;">二、scss @function</p>
 
-> 2.1 定义函数
+- 定义函数
 
 ```scss
 /* 颜色调用函数
@@ -94,7 +107,7 @@
 }
 ```
 
-> 2.2 不理解？请看这个 `css3 :root` [CSS var() 函数](https://www.runoob.com/cssref/func-var.html)
+- 不理解？请看这个 `css3 :root` [CSS var() 函数](https://www.runoob.com/cssref/func-var.html)
 
 ```scss
 /* 定义一个名为 "--main-bg-color" 的属性，然后使用 var() 函数调用该属性： */
@@ -133,7 +146,7 @@ $colors: (
 }
 ```
 
-### 自定义全局主题
+### 3. 自定义全局主题
 
 <p style="font-weight: bold;">一、实现方法，以下方法不晓得会不会影响页面渲染性能：</p>
 
@@ -147,38 +160,31 @@ $colors: (
 第 1 第 2 步就不介绍了，直接去路径去看就懂了。接下来我们讲讲第 3 步：
 :::
 
-> 2.1、通过 `document.documentElement.style.setProperty` 改变颜色值 [setProperty 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/CSSStyleDeclaration/setProperty)
+- 通过 `document.documentElement.style.setProperty` 改变颜色值 [setProperty 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/CSSStyleDeclaration/setProperty)
 
-```ts
-// setup 中
-import { reactive, toRefs } from "vue"
+```html
+<script setup>
+  import { reactive } from "vue";
 
-export defalut {
-	setup() {
-		const state = reactive({
-			color: ''
-		})
-		function colorChange() {
-			// 设置颜色
-			document.documentElement.style.setProperty(
-				"--color-primary",
-				state.color
-			)
-			// 设置颜色变浅
-			document.documentElement.style.setProperty(
-				"--color-primary-light-1",
-				getLightColor(state.color1, 0.1)
-			)
-		}
-		return {
-			colorChange,
-			...toRefs(state)
-		}
-	}
-}
+  // 定义变量内容
+  const state = reactive({
+    color: "",
+  });
+
+  // 改变主题颜色
+  const onColorChange = () => {
+    // 设置颜色
+    document.documentElement.style.setProperty("--color-primary", state.color);
+    // 设置颜色变浅
+    document.documentElement.style.setProperty(
+      "--color-primary-light-1",
+      getLightColor(state.color1, 0.1)
+    );
+  };
+</script>
 ```
 
-> 2.2、getLightColor 颜色变浅方法，路径在：`src/utils/theme.ts`
+- getLightColor 颜色变浅方法，路径在：[src/utils/theme.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/theme.ts)
 
 ```ts
 // 变浅颜色值，level为加深的程度，限0-1之间
@@ -192,15 +198,15 @@ export function getLightColor(color: any, level: number) {
 }
 ```
 
-> 2.3、到此就完成了主题的全局变色了
+- 到此就完成了主题的全局变色了
 
 tip 还有疑问？总的来说，就是通过重新定义 `css` 样式，用来覆盖 [element-plus](https://element-plus.gitee.io/#/zh-CN/component/changelog) 默认的样式，从而实现全局主题变色。其它方法实现全局主题，请自行 [百度一下：https://www.baidu.com/](https://www.baidu.com/)
 
-### 框架中实现例子
+### 4. 框架中实现例子
 
 <p style="font-weight: bold;">一、全局主题改变时</p>
 
-> 1.1、主题改变时，会调用 `onColorPickerChange` 方法进行重新的覆盖 css `:root` 定义的变量的值
+- 主题改变时，会调用 `onColorPickerChange` 方法进行重新的覆盖 css `:root` 定义的变量的值
 
 ```ts
 const onColorPickerChange = (color: string) => {
@@ -211,19 +217,29 @@ const onColorPickerChange = (color: string) => {
 };
 ```
 
-> 1.2、拿到的值会赋值给根节点上 `html`，`document.documentElement.style`。刷新的时再设置 `document.documentElement.style.cssText = Local.get('themeConfigStyle');`，防止数据丢失
+- 拿到的值会赋值给根节点上 `html`，`document.documentElement.style`。刷新的时再设置 `document.documentElement.style.cssText = Local.get('themeConfigStyle');`，防止数据丢失
 
 <img src="https://img-blog.csdnimg.cn/c6a07541180b448a9d2fc24e2c7686f8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
 
 <p style="font-weight: bold;">二、更改主题配置文件路径</p>
 
-> `/@/store/modules/themeConfig.ts`，注意看备注：直接修改时，需要同时修改 `/@/theme/common/var.scss` 对应的值
+修改后不生效，请注意看下列文件顶部文字注释。
+
+[vue3.x：/src/stores/themeConfig.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/stores/themeConfig.ts)，
+
+[vue2.x：/src/store/modules/themeConfig.js](https://gitee.com/lyt-top/vue-next-admin/blob/vue-prev-admin/src/store/modules/themeConfig.js)
+
+::: tip 修改配置时：
+1、需要每次都清理 `window.localStorage` 浏览器永久缓存
+
+2、或者点击布局配置最底部 `一键恢复默认` 按钮即可看到效果
+:::
 
 ## 菜单 / 顶栏
 
-### 顶栏
+### 1. 顶栏
 
-> 文件路径：`/@/layout/navBars/breadcrumb`
+文件路径：[/@/layout/navBars/breadcrumb](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/navBars/breadcrumb)
 
 <p style="font-weight: bold;">一、顶栏背景、顶栏默认字体颜色、顶栏背景渐变</p>
 
@@ -233,9 +249,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/6efa9498cddb49738ea9d59114185e10.gif#pic_center">
 
-### 菜单
+### 2. 菜单
 
-> 文件路径：`/@/layout/navMenu`
+文件路径：[/@/layout/navMenu](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/navMenu)
 
 <p style="font-weight: bold;">一、菜单背景、菜单默认字体颜色、菜单背景渐变、菜单字体背景高亮</p>
 
@@ -245,9 +261,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/8df792f8a8004a6d804f5d49775e21bb.gif#pic_center">
 
-### 分栏
+### 3. 分栏
 
-> 文件路径：`/@/layout/component/columnsAside.vue`
+文件路径：[/@/layout/component/columnsAside.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/component/columnsAside.vue)
 
 <p style="font-weight: bold;">一、分栏菜单背景、分栏菜单默认字体颜色、分栏菜单背景渐变</p>
 
@@ -259,9 +275,9 @@ const onColorPickerChange = (color: string) => {
 
 ## 界面设置
 
-### 菜单设置
+### 1. 菜单设置
 
-> 文件路径：`/@/layout/navMenu`
+文件路径：[/@/layout/navMenu](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/navMenu)
 
 <p style="font-weight: bold;">一、菜单水平折叠、菜单手风琴、经典布局分割菜单</p>
 
@@ -271,9 +287,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/a186682d39a54748b1efa4660a821d2d.gif#pic_center">
 
-### 固定 Header
+### 2. 固定 Header
 
-> 文件路径：`/@/layout/main`
+文件路径：[/@/layout/main](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/main)
 
 <p style="font-weight: bold;">一、固定 Header</p>
 
@@ -283,9 +299,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/ff1c08f33cea4a4897e1fd702de7f549.gif#pic_center">
 
-### 锁屏
+### 3. 锁屏
 
-> 文件路径：`/@/layout/lockScreen`
+文件路径：[/@/layout/lockScreen](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/lockScreen)
 
 <p style="font-weight: bold;">一、开启锁屏、自动锁屏(s/秒)</p>
 
@@ -297,9 +313,9 @@ const onColorPickerChange = (color: string) => {
 
 ## 界面显示
 
-### 侧边栏 Logo
+### 1. 侧边栏 Logo
 
-> 文件路径：`/@/layout/logo`
+文件路径：[/@/layout/logo](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/logo)
 
 <p style="font-weight: bold;">一、侧边栏 Logo</p>
 
@@ -309,9 +325,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/33ea0e305dcc4f228a47f4bc6c39ad80.gif#pic_center">
 
-### Breadcrumb 面包屑
+### 2. Breadcrumb 面包屑
 
-> 文件路径：`/@/layout/navBars/Breadcrumb/breadcrumb.vue`
+文件路径：[/@/layout/navBars/Breadcrumb/breadcrumb.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/navBars/breadcrumb/breadcrumb.vue)
 
 <p style="font-weight: bold;">一、开启 Breadcrumb、开启 Breadcrumb 图标</p>
 
@@ -321,9 +337,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/67df8ad8c6e641de94545aad586add9c.gif#pic_center">
 
-### Tagsview 标签页
+### 3. Tagsview 标签页
 
-> 文件路径：`/@/layout/navBars/tagsView`
+文件路径：[/@/layout/navBars/tagsView](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/navBars/tagsView)
 
 <p style="font-weight: bold;">一、开启 Tagsview、开启 Tagsview 图标、开启 TagsView 缓存、开启 TagsView 拖拽、开启 TagsView 共用</p>
 
@@ -333,9 +349,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/d760ab8798ac428593760226e870879f.gif#pic_center">
 
-### Footer 版权
+### 4. Footer 版权
 
-> 文件路径：`/@/layout/footer`
+文件路径：[/@/layout/footer](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/footer)
 
 <p style="font-weight: bold;">一、开启 Footer 版权</p>
 
@@ -345,9 +361,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/c1ca33ebf6e64ad3baba268235f348f3.gif#pic_center">
 
-### 颜色模式
+### 5. 颜色模式
 
-> 文件路径：`/@/layout/navBars/breadcrumb/setings.vue`
+文件路径：[/@/layout/navBars/breadcrumb/setings.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/navBars/breadcrumb/setings.vue)
 
 <p style="font-weight: bold;">一、灰色模式、色弱模式、深色模式</p>
 
@@ -357,9 +373,9 @@ const onColorPickerChange = (color: string) => {
 
 <img src="https://img-blog.csdnimg.cn/856f60ae98074f4e8c57c3fad16a8d94.gif#pic_center">
 
-### 水印
+### 6. 水印
 
-> 文件路径：`/@/utils/wartermark.ts`
+文件路径：[/@/utils/wartermark.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/watermark.ts)
 
 <p style="font-weight: bold;">一、开启水印、水印文案</p>
 
@@ -375,9 +391,11 @@ const onColorPickerChange = (color: string) => {
 可使用 el-option 的 `value` 值去对应的 `文件路径` 里搜索查看
 :::
 
-### Tagsview 风格
+### 1. Tagsview 风格
 
-> 文件路径：`/@/layout/navBars/tagsView`。需注意 `value` 值需与定义的 `css 类名` 一致
+文件路径：[/@/layout/navBars/tagsView](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/layout/navBars/tagsView)
+
+需注意 `value` 值需与定义的 `css 类名` 一致
 
 ```html
 <el-select v-model="getThemeConfig.tagsStyle">
@@ -392,9 +410,11 @@ const onColorPickerChange = (color: string) => {
 </el-select>
 ```
 
-### 主页面切换动画
+### 2. 主页面切换动画
 
-> 文件路径：`/@/theme/common/transition.scss`，内置 `slide-right`、`slide-left`、`opacitys` 切换风格。你可能需要了解 [进入过渡 & 离开过渡](https://v3.cn.vuejs.org/guide/transitions-enterleave.html)。新增动画时，需要在 `/@/layout/navBars/breadcrumb/setings.vue` 其它设置中添加如下：
+文件路径：[/@/theme/common/transition.scss](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/theme/common/transition.scss)，内置 `slide-right`、`slide-left`、`opacitys` 切换风格。
+
+你可能需要了解 [进入过渡 & 离开过渡](https://v3.cn.vuejs.org/guide/transitions-enterleave.html)。新增动画时，需要在 [/@/layout/navBars/breadcrumb/setings.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/navBars/breadcrumb/setings.vue) 其它设置中添加如下：
 
 ```html
 <el-select v-model="getThemeConfig.animation">
@@ -408,9 +428,11 @@ const onColorPickerChange = (color: string) => {
 </el-select>
 ```
 
-### 分栏高亮风格
+### 3. 分栏高亮风格
 
-> 文件路径：`/@/layout/component/columnsAside.vue`。需注意 `value` 值需与定义的 `css 类名` 一致
+文件路径：[/@/layout/component/columnsAside.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/component/columnsAside.vue)。
+
+需注意 `value` 值需与定义的 `css 类名` 一致
 
 ```html
 <el-select v-model="getThemeConfig.columnsAsideStyle">
@@ -423,9 +445,11 @@ const onColorPickerChange = (color: string) => {
 </el-select>
 ```
 
-### 分栏布局风格
+### 4. 分栏布局风格
 
-> 文件路径：`/@/layout/component/columnsAside.vue`。需注意 `value` 值需与定义的 `css 类名` 一致
+文件路径：[/@/layout/component/columnsAside.vue](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/layout/component/columnsAside.vue)。
+
+需注意 `value` 值需与定义的 `css 类名` 一致
 
 ```html
 <el-select v-model="getThemeConfig.columnsAsideLayout">
@@ -440,7 +464,9 @@ const onColorPickerChange = (color: string) => {
 
 ## 布局切换
 
-> 此项目包含四个布局：默认、经典、横向、分栏。查看大图，鼠标右键：`在新标签页中打开图片`
+此项目包含四个布局：默认、经典、横向、分栏。
+
+查看大图，鼠标右键：`在新标签页中打开图片`
 
 <img src="https://img-blog.csdnimg.cn/c3248cfc00cf404fbc3a28a286a95fb2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
 <img src="https://img-blog.csdnimg.cn/25ca8d809aae428c8589c376eab3980e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">

@@ -399,7 +399,7 @@ app.component("SvgIcon", SvgIcon);
 <SvgIcon :name="item.meta.icon" />
 
 // 或者
-<SvgIcon name="elementAim" :size="14" color="#333333"/>
+<SvgIcon name="ele-Aim" :size="14" color="#333333"/>
 ```
 
 ## 自定义引入本地图标

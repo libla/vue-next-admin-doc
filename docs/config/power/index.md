@@ -104,7 +104,7 @@ export function setAddRoute() {
 }
 ```
 
-- 后设置递归过滤有权限的路由到 vuex routesList 中（已处理成多级嵌套路由）及缓存多级嵌套数组处理后的一维数组。`setFilterHasRolesMenu` 为 [页面权限-过滤有权限路由](/config/power/#过滤有权限路由) 方法
+- 后设置递归过滤有权限的路由到 vuex routesList 中（已处理成多级嵌套路由）及缓存多级嵌套数组处理后的一维数组。`setFilterHasRolesMenu` 为 [页面权限-过滤有权限路由](/config/power/#_2-过滤有权限路由) 方法
 
 ```ts
 /**

@@ -8,7 +8,9 @@ svg 文档地址：[element plus 官网 Icon 图标](https://element-plus.gitee.
 
 ### 1. 框架中全局注册 svg
 
-[/@/utils/other.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/other.ts)，mian.ts 中引入 `import other from '/@/utils/other';`。添加了 `element` 前缀，防止图标冲突, `el` 前缀已被使用，可以使用 `el-xxx`。但是不建议已 `el` svg 前缀，因为会与 element plus 内置组件冲突
+[/@/utils/other.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/other.ts)，mian.ts 中引入 `import other from '/@/utils/other';`。添加了 `ele` 前缀，防止图标冲突, `el` 前缀已被使用，可以使用 `el-xxx`。但是不建议已 `el` svg 前缀，因为会与 element plus 内置组件冲突
+
+[查看演示图标](https://lyt-top.gitee.io/vue-next-admin-preview/#/pages/element)，注意看前缀为 `ele-`，使用为 `ele-xxx`。`xxx` 为 [element plus Icon 图标](https://element-plus.gitee.io/zh-CN/component/icon.html#%E5%9B%BE%E6%A0%87%E9%9B%86%E5%90%88) 图标名称。
 
 ```ts
 import type { App } from "vue";

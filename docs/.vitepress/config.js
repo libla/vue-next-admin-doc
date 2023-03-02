@@ -57,11 +57,12 @@ export default defineConfig({
       text: "欢迎到 Gitee 上编辑此页",
     },
     author: "lyt_20201208",
-    algolia: {
-      apiKey: "4d147eca3b892b30c89755c01165bc23",
-      appId: "HQFOYY4X30",
-      indexName: "vue-next-admin-doc-preview",
-    },
+    // algolia: {
+    //   apiKey: "ef1d5913298c3b377842ab406af9cbf6",
+    //   appId: "VZD7WV0OU8",
+    //   indexName: "vue-next-admin-doc-preview",
+    //   placeholder: "请输入内容...",
+    // },
     footer: {
       message: "根据 MIT 许可证发布",
       copyright: "本文档内容版权为 vue-next-admin 作者所有，保留所有权利。",
@@ -115,28 +116,37 @@ export default defineConfig({
         ],
       },
       {
-        text: "线上演示",
+        text: "演示 & 仓库",
         items: [
           {
-            text: "vue3.x 版本预览（vue-next-admin）",
-            link: "https://lyt-top.gitee.io/vue-next-admin-preview/#/login",
+            text: "⛱️ 线上演示",
+            items: [
+              {
+                text: "vue3.x 版本预览（vue-next-admin）",
+                link: "https://lyt-top.gitee.io/vue-next-admin-preview/#/login",
+              },
+              {
+                text: "vue2.x 版本预览（vue-prev-admin）",
+                link: "https://lyt-top.gitee.io/vue-prev-admin-preview/#/login",
+              },
+              {
+                text: "vue3 + uni-app 商城（vue-next-admin-shop）",
+                link: "https://lyt-top.gitee.io/vue-next-admin-shop-preview",
+              },
+            ],
           },
           {
-            text: "vue2.x 版本预览（vue-prev-admin）",
-            link: "https://lyt-top.gitee.io/vue-prev-admin-preview/#/login",
-          },
-        ],
-      },
-      {
-        text: "代码仓库",
-        items: [
-          {
-            text: "gitee（国内：实时更新）",
-            link: "https://gitee.com/lyt-top/vue-next-admin",
-          },
-          {
-            text: "github（国外：定期更新）",
-            link: "https://github.com/lyt-Top/vue-next-admin",
+            text: "💒 代码仓库",
+            items: [
+              {
+                text: "gitee（国内：实时更新）",
+                link: "https://gitee.com/lyt-top/vue-next-admin",
+              },
+              {
+                text: "github（国外：定期更新）",
+                link: "https://github.com/lyt-Top/vue-next-admin",
+              },
+            ],
           },
         ],
       },

@@ -539,3 +539,9 @@ build: {
   },
 },
 ```
+
+## 地址栏带 `#号` 与不带 `#号`
+
+地址栏带 `#号` 与不带 `#号` ，参考：[next.router history-mode.html](https://next.router.vuejs.org/guide/essentials/history-mode.html)
+
+访问路由器和内部的当前路由 setup：[Vue 路由器和 Composition API](https://next.router.vuejs.org/guide/advanced/composition-api.html#accessing-the-router-and-current-route-inside-setup)

@@ -23,24 +23,11 @@ DB_PASSWORD = foobar
 VITE_SOME_KEY = 123
 ```
 
-只有 `VITE_SOME_KEY` 会被暴露为 `import.meta.env.VITE_SOME_KEY` 提供给客户端源码，而 `DB_PASSWORD` 则不会。
+只有 `VITE_SOME_KEY` 会被暴露为 `import.meta.env.VITE_SOME_KEY` 提供给客户端，而 `DB_PASSWORD` 则不会。
 
 ## axios 封装
 
-[Axios](https://www.kancloud.cn/yunye/axios/234845) 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。
-
-### 1. 特征
-
-- 从浏览器中创建 XMLHttpRequests
-- 从 node.js 创建 http 请求
-- 支持 Promise API
-- 拦截请求和响应
-- 转换请求数据和响应数据
-- 取消请求
-- 自动转换 JSON 数据
-- 客户端支持防御 XSRF
-
-### 2. 框架中创建 axios
+### 1. 框架中创建 axios
 
 文件路径：[/@/utils/request.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/utils/request.ts)
 
@@ -54,7 +41,7 @@ const service = axios.create({
 });
 ```
 
-### 3. 添加请求拦截器
+### 2. 添加请求拦截器
 
 ::: danger 注意 axios 版本
 
@@ -78,7 +65,7 @@ service.interceptors.request.use(
 );
 ```
 
-### 4. 添加响应拦截器
+### 3. 添加响应拦截器
 
 注意`高亮处`的判断，根据 `后端接口返回的参数` 做具体判断，否则可能 `拿不到接口返回的数据`。此处根据需求自行修改，非固定。
 
@@ -288,7 +275,7 @@ export default {
 
 ### 1. 最常见跨域代码
 
-Access to XMLHttpRequest at `'https://gitee.com/lyt-top/vue-next-admin-images/raw/master/menu/adminMenu.json'` from origin `'http://localhost:8888'` has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No `'Access-Control-Allow-Origin'` header is present on the requested resource.
+Access to XMLHttpRequest at `'xxx/lyt-top/vue-next-admin-images/raw/master/menu/adminMenu.json'` from origin `'http://localhost:8888'` has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No `'Access-Control-Allow-Origin'` header is present on the requested resource.
 
 ### 2. 跨域处理
 
@@ -327,20 +314,20 @@ export function getMenuAdmin(params?: object) {
 // 根目录 vite.config.ts
 server: {
   proxy: {
-    '/gitee': {
-      target: 'https://gitee.com',
+    '/随便定义': {
+      target: '填写跨域的目标域名',
       ws: true,
       changeOrigin: true,
-      rewrite: (path) => path.replace(/^\/gitee/, ''),
+      rewrite: (path) => path.replace(/^\/随便定义/, ''),
     },
   },
 },
 
 // /@/api/menu/index.ts
-// 使用 /gitee/ 代替 https://gitee.com
+// 使用 `/随便定义/` 代替 `填写跨域的目标域名`
 export function getMenuAdmin(params?: object) {
 	return request({
-		url: '/gitee/lyt-top/vue-next-admin-images/raw/master/menu/adminMenu.json',
+		url: '/随便定义/lyt-top/vue-next-admin-images/raw/master/menu/adminMenu.json',
 		method: 'get',
 		params,
 	});

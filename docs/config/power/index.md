@@ -231,7 +231,7 @@ export function setFilterMenuAndCacheTagsViewRoutes() {
 
 ### 2. 指令方式
 
-指令位置：[/@/utils/authDirective.ts](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/directive)，您可能需要了解 [自定义指令 directive](https://v3.cn.vuejs.org/guide/custom-directive.html)
+指令位置：[/@/directive/authDirective.ts](https://gitee.com/lyt-top/vue-next-admin/tree/master/src/directive)，您可能需要了解 [自定义指令 directive](https://v3.cn.vuejs.org/guide/custom-directive.html)
 
 #### 单个权限验证（v-auth="xxx"）
 

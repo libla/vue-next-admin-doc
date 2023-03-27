@@ -68,7 +68,7 @@ other.elSvg(app);
 </el-input>
 ```
 
-所以使用了 <el-icon></el-icon> 包裹着
+所以使用了 `<el-icon></el-icon>` 包裹着
 
 ```html {9}
 <el-input

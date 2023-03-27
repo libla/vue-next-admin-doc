@@ -85,7 +85,7 @@ service.interceptors.response.use(
       }
       return Promise.reject(service.interceptors.response);
     } else {
-      return response.data;
+      return res;
     }
   },
   (error) => {
@@ -111,7 +111,11 @@ service.interceptors.response.use(
 
 如：`login 模块`，api 文件夹下新建 `/@/api/login` 文件夹
 
-<img src="https://img-blog.csdnimg.cn/415d360a095e4c4daefb909c5d61963f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/2160ff7fa879b5efe3c5b6a5355ba365.png](https://i.hd-r.cn/2160ff7fa879b5efe3c5b6a5355ba365.png)
+
+</div>
 
 ### 2. 统一 api 管理
 

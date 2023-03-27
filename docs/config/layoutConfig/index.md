@@ -17,7 +17,11 @@
 
 大图查看，鼠标右键：`在新标签页中打开图片`。
 
-<img src="https://img-blog.csdnimg.cn/b7738eba9c534cffb9e6b648552fa591.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/7334cd9793eb82b58b916232989b361d.png](https://i.hd-r.cn/7334cd9793eb82b58b916232989b361d.png)
+
+</div>
 
 ## 全局主题
 
@@ -219,7 +223,11 @@ const onColorPickerChange = (color: string) => {
 
 - 拿到的值会赋值给根节点上 `html`，`document.documentElement.style`。刷新的时再设置 `document.documentElement.style.cssText = Local.get('themeConfigStyle');`，防止数据丢失
 
-<img src="https://img-blog.csdnimg.cn/c6a07541180b448a9d2fc24e2c7686f8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/a3a3534aebcd493686f71631332493c5.png](https://i.hd-r.cn/a3a3534aebcd493686f71631332493c5.png)
+
+</div>
 
 <p style="font-weight: bold;">二、更改主题配置文件路径</p>
 
@@ -247,7 +255,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/6efa9498cddb49738ea9d59114185e10.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/6efa9498cddb49738ea9d59114185e10.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/6efa9498cddb49738ea9d59114185e10.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/6efa9498cddb49738ea9d59114185e10.gif)
+
+</div>
+
+</a>
 
 ### 2. 菜单
 
@@ -259,7 +275,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/8df792f8a8004a6d804f5d49775e21bb.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/8df792f8a8004a6d804f5d49775e21bb.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/8df792f8a8004a6d804f5d49775e21bb.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/8df792f8a8004a6d804f5d49775e21bb.gif)
+
+</div>
+
+</a>
 
 ### 3. 分栏
 
@@ -271,7 +295,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/9dc53c3088164e5d9760eb0b08b38524.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/9dc53c3088164e5d9760eb0b08b38524.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/9dc53c3088164e5d9760eb0b08b38524.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/9dc53c3088164e5d9760eb0b08b38524.gif)
+
+</div>
+
+</a>
 
 ## 界面设置
 
@@ -285,7 +317,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/a186682d39a54748b1efa4660a821d2d.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/a186682d39a54748b1efa4660a821d2d.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/a186682d39a54748b1efa4660a821d2d.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/a186682d39a54748b1efa4660a821d2d.gif)
+
+</div>
+
+</a>
 
 ### 2. 固定 Header
 
@@ -297,7 +337,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/ff1c08f33cea4a4897e1fd702de7f549.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/ff1c08f33cea4a4897e1fd702de7f549.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/ff1c08f33cea4a4897e1fd702de7f549.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/ff1c08f33cea4a4897e1fd702de7f549.gif)
+
+</div>
+
+</a>
 
 ### 3. 锁屏
 
@@ -309,7 +357,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/4e1a05bffcd44ac6b5bd71272f39fe04.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/4e1a05bffcd44ac6b5bd71272f39fe04.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/4e1a05bffcd44ac6b5bd71272f39fe04.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/4e1a05bffcd44ac6b5bd71272f39fe04.gif)
+
+</div>
+
+</a>
 
 ## 界面显示
 
@@ -323,7 +379,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/33ea0e305dcc4f228a47f4bc6c39ad80.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/33ea0e305dcc4f228a47f4bc6c39ad80.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/33ea0e305dcc4f228a47f4bc6c39ad80.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/33ea0e305dcc4f228a47f4bc6c39ad80.gif)
+
+</div>
+
+</a>
 
 ### 2. Breadcrumb 面包屑
 
@@ -335,7 +399,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/67df8ad8c6e641de94545aad586add9c.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/67df8ad8c6e641de94545aad586add9c.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/67df8ad8c6e641de94545aad586add9c.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/67df8ad8c6e641de94545aad586add9c.gif)
+
+</div>
+
+</a>
 
 ### 3. Tagsview 标签页
 
@@ -347,7 +419,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/d760ab8798ac428593760226e870879f.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/d760ab8798ac428593760226e870879f.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/d760ab8798ac428593760226e870879f.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/d760ab8798ac428593760226e870879f.gif)
+
+</div>
+
+</a>
 
 ### 4. Footer 版权
 
@@ -359,7 +439,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/c1ca33ebf6e64ad3baba268235f348f3.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/c1ca33ebf6e64ad3baba268235f348f3.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/c1ca33ebf6e64ad3baba268235f348f3.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/c1ca33ebf6e64ad3baba268235f348f3.gif)
+
+</div>
+
+</a>
 
 ### 5. 颜色模式
 
@@ -371,7 +459,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/856f60ae98074f4e8c57c3fad16a8d94.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/856f60ae98074f4e8c57c3fad16a8d94.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/856f60ae98074f4e8c57c3fad16a8d94.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/856f60ae98074f4e8c57c3fad16a8d94.gif)
+
+</div>
+
+</a>
 
 ### 6. 水印
 
@@ -383,7 +479,15 @@ const onColorPickerChange = (color: string) => {
 
 <p style="font-weight: bold;">二、效果图</p>
 
-<img src="https://img-blog.csdnimg.cn/19e0ced20c2d495599b69f09227f690b.gif#pic_center">
+<a href="https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/19e0ced20c2d495599b69f09227f690b.gif" target="_black">
+
+<div class="img-style-100">
+
+![https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/19e0ced20c2d495599b69f09227f690b.gif](https://gitee.com/lyt-top/vue-next-admin-images/raw/master/docs/layout/19e0ced20c2d495599b69f09227f690b.gif)
+
+</div>
+
+</a>
 
 ## 其它设置
 
@@ -468,7 +572,26 @@ const onColorPickerChange = (color: string) => {
 
 查看大图，鼠标右键：`在新标签页中打开图片`
 
-<img src="https://img-blog.csdnimg.cn/c3248cfc00cf404fbc3a28a286a95fb2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/25ca8d809aae428c8589c376eab3980e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/c636cb89741644f49a627b0a690c5aae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/e05cd231ff234110973ea0db6dc5c3a7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
+<div class="img-style">
+
+![https://i.hd-r.cn/f6c87ee0b5ad2567a7166762efa61633.png](https://i.hd-r.cn/f6c87ee0b5ad2567a7166762efa61633.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/10763d37a5ef087cdd62122c7ec4b622.png](https://i.hd-r.cn/10763d37a5ef087cdd62122c7ec4b622.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/be587be203e9fdb06dc1208f20268d9f.png](https://i.hd-r.cn/be587be203e9fdb06dc1208f20268d9f.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/47b00d7daec564ee34ef3032519492b2.png](https://i.hd-r.cn/47b00d7daec564ee34ef3032519492b2.png)
+
+</div>

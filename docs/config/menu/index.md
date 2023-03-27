@@ -145,7 +145,11 @@
 
 - 一般情况下，我们添加菜单时，代码都是在编译中（cnpm run dev）。所以我们先新增文件夹，后再添加代码到 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件中，防止需要重新再运行项目。`/@/views` 下新增 `personal` 文件夹
 
-<img src="https://img-blog.csdnimg.cn/3ba519fd2d0e47a2ab10c6a7f2f03d67.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/8e977eabef05c8b4b255799ac4957bd2.png](https://i.hd-r.cn/8e977eabef05c8b4b255799ac4957bd2.png)
+
+</div>
 
 - index.vue，注意 `name` 值需与 [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 中的 `name` 值一致，否则实现不了路由的缓存（keep-alive）
 
@@ -206,7 +210,11 @@ const state = reactive({});
 
 去 `http://localhost:8888/` 中查看显示效果，如下：
 
-<img src="https://img-blog.csdnimg.cn/01cccea40e51431f9ac16af6ec6b0fbd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/97c1313ce849a9a909561f37dfb94677.png](https://i.hd-r.cn/97c1313ce849a9a909561f37dfb94677.png)
+
+</div>
 
 ## 二级菜单
 
@@ -222,7 +230,11 @@ const state = reactive({});
 
 - 我们按照建 `一级菜单` 的步骤建 `二级菜单`。`/@/views` 下新增 `system` 文件夹。`system` 文件夹下新增 `menu、user` 等文件夹
 
-<img src="https://img-blog.csdnimg.cn/db3d9ea349a146faa5ba857e35f9ca51.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/fc319a4fef52d39938390f8151100704.png](https://i.hd-r.cn/fc319a4fef52d39938390f8151100704.png)
+
+</div>
 
 - 为了方便管理，我们在 `/@/views/system/menu` 或 `/@/views/system/user` 中都添加 `index.vue` 组件
 
@@ -320,7 +332,11 @@ const state = reactive({});
 
 去 `http://localhost:8888/` 中查看显示效果，如下：
 
-<img src="https://img-blog.csdnimg.cn/70f38da5ef8b4836b54414f9fb96b028.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/233b7cec76dac5610d35d451cb82688b.png](https://i.hd-r.cn/233b7cec76dac5610d35d451cb82688b.png)
+
+</div>
 
 ## 多级嵌套菜单写法
 
@@ -338,7 +354,11 @@ const state = reactive({});
 
 - 我们按照建 `二级菜单` 的步骤建 `多级嵌套菜单`。`/@/views` 下新增 `menu` 文件夹。`menu` 文件夹下新增 `menu1` 等文件夹，`menu1` 文件夹下新增 `menu12` 等。
 
-<img src="https://img-blog.csdnimg.cn/be2073d1e4d84505b1e6ff88140a3403.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/871f2c6abd5398c4887060a8b3596ea6.png](https://i.hd-r.cn/871f2c6abd5398c4887060a8b3596ea6.png)
+
+</div>
 
 - 组件代码参考 [/config/menu/#二级菜单](/config/menu/#二级菜单)
 
@@ -424,7 +444,11 @@ const state = reactive({});
 
 去 `http://localhost:8888/` 中查看显示效果，如下：
 
-<img src="https://img-blog.csdnimg.cn/94bc62c040884cdab2b0554f5be6ce1b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_12,color_FFFFFF,t_70,g_se,x_16">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/1c5b991ed37874664b77184bf26e03ea.png](https://i.hd-r.cn/1c5b991ed37874664b77184bf26e03ea.png)
+
+</div>
 
 ## 后端接口菜单
 

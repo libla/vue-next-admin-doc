@@ -6,6 +6,8 @@
 
 请花点时间认真阅读以下内容，否则页面代码可能各种错误！若当前文件夹不在 `vsCode` 工作区中，请把项目拉出来（就是不要放进嵌套文件夹中，放最顶级可消除部分报红）。
 
+图片看不了的话，请看文章 [关于 vue3 + vite + typescript + eslint + prettier + vscode 的配置说明](https://blog.csdn.net/qq_34450741/article/details/114806291)
+
 ## vsCode 下载
 
 官网地址：[https://code.visualstudio.com/](https://code.visualstudio.com/)
@@ -14,7 +16,7 @@
 
 ### 1. 点击左侧图标
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/202103142212293.png)
+![在这里插入图片描述](https://i.hd-r.cn/08556cf2c932055859c4255e884e48c8.png)
 
 ### 2. 复制粘贴以下插件进行安装（可批量搜索，空格隔开）
 
@@ -57,7 +59,7 @@
 - 搜 setting，
 - 复制粘贴以下内容到 setting
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210314234313337.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDUwNzQx,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://i.hd-r.cn/8e985740b44ccaddc97a1a67c3d0cae5.png)
 
 ```json
 {
@@ -137,15 +139,15 @@
 
 ### 1. 点击 `allow everywhere` 或者 `allow`
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210314235038442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDUwNzQx,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://i.hd-r.cn/34c8b8ed1ea43bb2322b2c138cc76029.png)
 
 ### 2. 出现 `!感叹号`，点击如下图片位置
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210314235243151.png)
+![在这里插入图片描述](https://i.hd-r.cn/31bdadea290f0bd74a65f4a39fed6f64.png)
 
 ### 3. 出现其它弹窗，直接点击 `关闭按钮`
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210315104826364.png)
+![在这里插入图片描述](https://i.hd-r.cn/102b16b442de63211960b3859b06d404.png)
 
 ## 如果配置不生效，请尝试重启下 vsCode
 
@@ -155,7 +157,7 @@
 
 如下图所示， `locals` 出现了双提示：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/4144c48d59c74b9eb312ddfb47ff9263.png)
+![在这里插入图片描述](https://i.hd-r.cn/1c45f8c5ca412ce2ac69fcfabb0c4aac.png)
 
 ### 1. 卸载 `Vetur` 插件 + 删除 vs code 配置代码
 
@@ -171,4 +173,4 @@
 
 ### 2. 或者禁用工作区，`shift + ctrl + x` 找到 `Vetur` 插件
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/a9dc3bd472e14712852fa8d4e85b7f3f.png)
+![在这里插入图片描述](https://i.hd-r.cn/2ebef9f39a271a63ca10c76ab78d530a.png)

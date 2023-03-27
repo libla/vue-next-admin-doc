@@ -6,7 +6,7 @@ hero:
   text: 后台开源免费模板
   tagline: 专注、免费、开源、维护、解疑
   image:
-    src: https://img-blog.csdnimg.cn/9efd5420327a46b7bd6d93524a97229d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_14,color_FFFFFF,t_70,g_se,x_16
+    src: https://i.hd-r.cn/6ce52e5724fae609444b5b48bdc4accb.png
     alt: vue-next-admin
   actions:
     - theme: brand

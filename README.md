@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://img-blog.csdnimg.cn/9efd5420327a46b7bd6d93524a97229d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_14,color_FFFFFF,t_70,g_se,x_16">
+	<img src="https://i.hd-r.cn/6ce52e5724fae609444b5b48bdc4accb.png">
 	<p align="center">
 		<a href="https://v3.vuejs.org/" target="_blank">
 			<img src="https://img.shields.io/badge/vue.js-vue3.x-green" alt="vue">

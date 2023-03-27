@@ -25,15 +25,49 @@ vueNextAdmin 是免费和开源的，由优秀的赞助商提供支持 ❤️。
 
 > 此项目包含四个布局：默认、经典、横向、分栏。查看大图，鼠标右键：`在新标签页中打开图片`
 
-<img src="https://img-blog.csdnimg.cn/c3248cfc00cf404fbc3a28a286a95fb2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/25ca8d809aae428c8589c376eab3980e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/c636cb89741644f49a627b0a690c5aae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/e05cd231ff234110973ea0db6dc5c3a7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
+<div class="img-style">
+
+![https://i.hd-r.cn/f6c87ee0b5ad2567a7166762efa61633.png](https://i.hd-r.cn/f6c87ee0b5ad2567a7166762efa61633.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/10763d37a5ef087cdd62122c7ec4b622.png](https://i.hd-r.cn/10763d37a5ef087cdd62122c7ec4b622.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/be587be203e9fdb06dc1208f20268d9f.png](https://i.hd-r.cn/be587be203e9fdb06dc1208f20268d9f.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/47b00d7daec564ee34ef3032519492b2.png](https://i.hd-r.cn/47b00d7daec564ee34ef3032519492b2.png)
+
+</div>
 
 > 其它截图
 
-<img src="https://img-blog.csdnimg.cn/3c3d1e20a9514437a4c3db0767943ea7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/0b2f77e2aeda4576836cd86ecf9c4a00.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_20,color_FFFFFF,t_70,g_se,x_16" width="50%" style="border: 1px solid var(--c-brand);">
+<div class="img-style">
+
+![https://i.hd-r.cn/50b14fc9c7b1596abc35360fcdf2615c.png](https://i.hd-r.cn/50b14fc9c7b1596abc35360fcdf2615c.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/757d34b0028a7f3b5adbee089321b2ac.png](https://i.hd-r.cn/757d34b0028a7f3b5adbee089321b2ac.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/ab14fd11e15a3df02a8ade08fdde1d52.png](https://i.hd-r.cn/ab14fd11e15a3df02a8ade08fdde1d52.png)
+
+</div>
 
 ## 项目预览
 

@@ -20,7 +20,11 @@
 
 - 用户信息中的 `roles` 角色权限标识，用于 `/@/router/route.ts` 中的 `meta.roles` 获取当前用户角色权限标识去比对路由表，设置递归过滤有权限的路由。图片中所示数据为 `/@/views/login/component/account.vue` 前端写死模拟数据，可在浏览器 `F12`：`Application/Storage/Session Storage` 中的 `userInfo` 字段中查看。
 
-<img src="https://img-blog.csdnimg.cn/618ad1d3fc2d41f8b0b5dcd345e544b3.png">
+<div class="img-style-100">
+
+![https://i.hd-r.cn/ab1c4eee148ccc41e0e43c2db5b8b95f.png](https://i.hd-r.cn/ab1c4eee148ccc41e0e43c2db5b8b95f.png)
+
+</div>
 
 - [/@/router/route.ts](https://gitee.com/lyt-top/vue-next-admin/blob/master/src/router/route.ts) 文件。[菜单配置-参数说明](/config/menu/#参数说明)
 

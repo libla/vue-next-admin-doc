@@ -18,8 +18,17 @@ vueNextAdmin 是免费和开源的，由优秀的赞助商提供支持 ❤️。
 
 ## 感谢捐赠
 
-<img src="https://img-blog.csdnimg.cn/79fdc41e65b54b58b6e710ac98716a8b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_15,color_FFFFFF,t_70,g_se,x_16" width="30%" style="border: 1px solid var(--c-brand);">
-<img src="https://img-blog.csdnimg.cn/db85818984ff475a85fff120a2e26dc1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbHl0LXRvcA==,size_15,color_FFFFFF,t_70,g_se,x_16" width="30%" style="border: 1px solid var(--c-brand);">
+<div class="img-style">
+
+![https://i.hd-r.cn/dd9b34b76dd64623d966b95e870a8f42.png](https://i.hd-r.cn/dd9b34b76dd64623d966b95e870a8f42.png)
+
+</div>
+
+<div class="img-style">
+
+![https://i.hd-r.cn/0c27a2a28bf3e2da6af154b752e7a5fd.png](https://i.hd-r.cn/0c27a2a28bf3e2da6af154b752e7a5fd.png)
+
+</div>
 
 ## 捐赠名单
 
@@ -27,6 +36,9 @@ vueNextAdmin 是免费和开源的，由优秀的赞助商提供支持 ❤️。
 
 | 金额   | 捐赠者                   | 留言                                                             | 时间       | 来源   |
 | ------ | ------------------------ | ---------------------------------------------------------------- | ---------- | ------ |
+| 100.00 | sonmin                   | 非常感谢您的开源项目，给我很大的帮助！                           | 2023-03-16 | 微信   |
+| 100.00 | sonmin                   | 非常感谢您的开源项目，给我很大的帮助！                           | 2023-03-09 | 微信   |
+| 66.00  | 唐参                     |                                                                  | 2023-03-08 | 微信   |
 | 10.00  | uni                      | 谢谢，非常棒的框架!                                              | 2023-01-29 | 微信   |
 | 16.00  | 姗姗来迟                 | 大佬牛逼                                                         | 2023-01-16 | 微信   |
 | 10.0   | 默默且听风               | 感谢您的开源项目！                                               | 2022-12-30 | gitee  |

@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import mdItCustomAttrs from "markdown-it-custom-attrs";
 
 /**
  * 找不到配置字段，按住 Ctrl + 鼠标移动到对应字段上点击，
@@ -38,7 +39,27 @@ export default defineConfig({
       })();
       `,
     ],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css",
+      },
+    ],
+    [
+      "script",
+      {
+        src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js",
+      },
+    ],
   ],
+  markdown: {
+    config: (md) => {
+      md.use(mdItCustomAttrs, "image", {
+        "data-fancybox": "gallery",
+      });
+    },
+  },
   title: "vue-next-admin",
   description:
     "🎉🎉🔥基于vue3.x 、Typescript、vite、Element plus等，适配手机、平板、pc 的后台开源免费模板库（vue2.x请切换vue-prev-admin分支）开发文档",
@@ -77,6 +98,10 @@ export default defineConfig({
       {
         text: "集成后端",
         items: [
+          {
+            text: "@zuohuaijun Admin.NET",
+            link: "https://gitee.com/zuohuaijun/Admin.NET",
+          },
           {
             text: "@熊猫 PandaGoAdmin",
             link: "https://github.com/PandaGoAdmin/PandaX",

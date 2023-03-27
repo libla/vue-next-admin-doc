@@ -33,3 +33,24 @@ img {
 .next-sponsors-item img {
   border-radius: 12px;
 }
+
+/* 图片样式
+------------------------------- */
+.img-style,
+.img-style-100 {
+  width: 50%;
+  display: inline-block;
+  border: 1px solid var(--vp-c-brand);
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 100px;
+}
+.img-style p,
+.img-style-100 p {
+  margin: 0;
+  line-height: 0;
+}
+.img-style-100 {
+  width: 100%;
+}
